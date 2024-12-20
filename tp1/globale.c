@@ -5,8 +5,8 @@
 #define P 1432
 #define T 8192000
 
-float **A, **B, **C;
-float *As, *A1, *B1, *C1;
+float A[N][P], B[P][M], C[N][M];
+float As[T], A1[T], B1[T], C1[T];
 float s;
 
 void initialiserMatrices(){
@@ -58,21 +58,7 @@ void mult_scalaire(){
 
 int main(){
 	s = 1.5;
-	A=malloc(N*sizeof(float *));
-	B=malloc(P*sizeof(float *));
-	C=malloc(N*sizeof(float *));
-    A1 = malloc(T*sizeof(float));
-    B1 = malloc(T*sizeof(float));
-    C1 = malloc(T*sizeof(float));
-    As = malloc(T*sizeof(float));
-    
-    for(int i=0;i<N;i++){
-    	A[i] = malloc(P * sizeof(float));
-    	B[i] = malloc(M * sizeof(float));
-    	C[i] = malloc(M * sizeof(float));
-    }
-    if (A==NULL){printf("erreur allocation\n");exit(1);}
-    
+	    
     initialiserMatrices();
     #ifdef MULT
     multMatrice();
@@ -85,20 +71,6 @@ int main(){
     add();
     mult_scalaire();
     #endif
-    
-    for(int i=0;i<N;i++){
-    	free(A[i]);
-    	free(B[i]);
-    	free(C[i]);
-    }
-    
-    free(A);
-    free(B);
-    free(C);
-    free(A1);
-    free(B1);
-    free(C1);
-    free(As);
     return 0;
 }
 //gcc -01 tp1.c -Wall -o matrice01.out
