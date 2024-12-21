@@ -1,0 +1,57 @@
+bash -c 'time ./tp2_O2_fusion'
+2.000000 2.000000 1.000000
+
+real    0m2,638s
+user    0m2,618s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_fusion_Q1'
+2.000000 2.000000 1.000000
+
+real    0m2,211s
+user    0m2,196s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_fusion_Q2'
+2.000000 2.000000 1.000000
+
+real    0m4,770s
+user    0m4,744s
+sys     0m0,004s
+
+---------------------------------2eme------------------------
+bash -c 'time ./tp2_O2_fusion'
+2.000000 2.000000 1.000000
+
+real    0m1,228s
+user    0m1,219s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_fusion_Q1'
+2.000000 2.000000 1.000000
+
+real    0m1,600s
+user    0m1,596s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_fusion_Q2'
+2.000000 2.000000 1.000000
+
+real    0m5,203s
+user    0m5,199s
+sys     0m0,004s
+------------------------------3-----------------
+bash -c 'time ./tp2_O2_fusion'
+2.000000 2.000000 1.000000
+
+real    0m1,901s
+user    0m1,889s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_fusion_Q1'
+2.000000 2.000000 1.000000
+
+real    0m1,570s
+user    0m1,562s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_fusion_Q2'
+2.000000 2.000000 1.000000
+
+real    0m5,130s
+user    0m5,130s
+sys     0m0,000s

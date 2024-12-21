@@ -1,0 +1,109 @@
+bash -c 'time ./tp2_O2_interchange_ijk'
+
+real    0m5,762s
+user    0m5,753s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_interchange_ikj'
+
+real    0m2,515s
+user    0m2,511s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_interchange_kij'
+
+real    0m2,448s
+user    0m2,443s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_interchange_kji'
+
+real    0m6,402s
+user    0m6,390s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_interchange_jik'
+
+real    0m12,170s
+user    0m12,162s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_interchange_jki'
+
+real    0m18,325s
+user    0m18,321s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_interchange_fi'
+
+real    0m0,009s
+user    0m0,000s
+sys     0m0,009s
+
+-------------------------------2eme-----------------------------------------
+bash -c 'time ./tp2_O2_interchange_ijk'
+
+real    0m4,896s
+user    0m4,892s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_interchange_ikj'
+
+real    0m2,692s
+user    0m2,691s
+sys     0m0,000s
+bash -c 'time ./tp2_O2_interchange_kij'
+
+real    0m2,917s
+user    0m2,904s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_interchange_kji'
+
+real    0m6,089s
+user    0m6,078s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_interchange_jik'
+
+real    0m12,859s
+user    0m12,814s
+sys     0m0,028s
+bash -c 'time ./tp2_O2_interchange_jki'
+
+real    0m18,388s
+user    0m18,383s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_interchange_fi'
+
+real    0m0,010s
+user    0m0,003s
+sys     0m0,007s
+
+-------------------------------------3eme-------------------------------
+bash -c 'time ./tp2_O2_interchange_ijk'
+
+real    0m3,808s
+user    0m3,784s
+sys     0m0,024s
+bash -c 'time ./tp2_O2_interchange_ikj'
+
+real    0m2,015s
+user    0m2,007s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_interchange_kij'
+
+real    0m2,007s
+user    0m2,007s
+sys     0m0,000s
+bash -c 'time ./tp2_O2_interchange_kji'
+
+real    0m4,998s
+user    0m4,994s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_interchange_jik'
+
+real    0m12,058s
+user    0m12,024s
+sys     0m0,016s
+bash -c 'time ./tp2_O2_interchange_jki'
+
+real    0m18,782s
+user    0m18,773s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_interchange_fi'
+
+real    0m0,008s
+user    0m0,004s
+sys     0m0,004s

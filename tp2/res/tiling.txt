@@ -1,0 +1,169 @@
+bash -c 'time ./tp2_O2_tiling_Q1_L1'
+
+real    0m3,082s
+user    0m3,069s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_tiling_Q1_L2'
+
+real    0m4,009s
+user    0m4,005s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_l3'
+
+real    0m4,587s
+user    0m4,583s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_ikj_L1'
+
+real    0m2,409s
+user    0m2,391s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_ikj_L2'
+
+real    0m2,565s
+user    0m2,557s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_ikj_L3'
+
+real    0m2,447s
+user    0m2,442s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_kij_L1'
+
+real    0m2,389s
+user    0m2,381s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_kij_L2'
+
+real    0m2,557s
+user    0m2,538s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_kij_L3'
+
+real    0m2,441s
+user    0m2,410s
+sys     0m0,016s
+bash -c 'time ./tp2_O2_tiling_fb'
+
+real    0m4,628s
+user    0m4,604s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_tiling_fb_fi'
+
+real    0m4,630s
+user    0m4,599s
+sys     0m0,008s
+
+-----------------------2eme---------------------------
+bash -c 'time ./tp2_O2_tiling_Q1_L1'
+
+real    0m3,062s
+user    0m3,062s
+sys     0m0,000s
+bash -c 'time ./tp2_O2_tiling_Q1_L2'
+
+real    0m3,978s
+user    0m3,966s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_tiling_Q1_l3'
+
+real    0m4,580s
+user    0m4,567s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_tiling_Q1_ikj_L1'
+
+real    0m2,399s
+user    0m2,384s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_ikj_L2'
+
+real    0m2,560s
+user    0m2,537s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_tiling_Q1_ikj_L3'
+
+real    0m2,439s
+user    0m2,423s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_tiling_Q1_kij_L1'
+
+real    0m2,397s
+user    0m2,393s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_kij_L2'
+
+real    0m2,552s
+user    0m2,548s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_kij_L3'
+
+real    0m2,473s
+user    0m2,465s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_tiling_fb'
+
+real    0m4,610s
+user    0m4,602s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_tiling_fb_fi'
+
+real    0m4,642s
+user    0m4,629s
+sys     0m0,008s
+
+-------------------------3eme------------------------
+bash -c 'time ./tp2_O2_tiling_Q1_L1'
+
+real    0m3,076s
+user    0m3,069s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_L2'
+
+real    0m4,001s
+user    0m3,997s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_l3'
+
+real    0m4,560s
+user    0m4,548s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_tiling_Q1_ikj_L1'
+
+real    0m2,399s
+user    0m2,399s
+sys     0m0,000s
+bash -c 'time ./tp2_O2_tiling_Q1_ikj_L2'
+
+real    0m2,551s
+user    0m2,547s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_ikj_L3'
+
+real    0m2,471s
+user    0m2,464s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_kij_L1'
+
+real    0m2,384s
+user    0m2,380s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_tiling_Q1_kij_L2'
+
+real    0m2,560s
+user    0m2,534s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_tiling_Q1_kij_L3'
+
+real    0m2,406s
+user    0m2,398s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_tiling_fb'
+
+real    0m4,643s
+user    0m4,624s
+sys     0m0,012s
+bash -c 'time ./tp2_O2_tiling_fb_fi'
+
+real    0m4,628s
+user    0m4,624s
+sys     0m0,004s

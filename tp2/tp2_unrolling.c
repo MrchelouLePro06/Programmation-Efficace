@@ -4,7 +4,7 @@
 #define M 2000
 #define P 2000
 
-float **A, **B, **C;
+float A[N][M], B[N][P], C[M][P];
 
 void initialiserMatrices(){
     for(int i=0;i<N;i++){
@@ -19,8 +19,18 @@ void initialiserMatrices(){
 void multMatrice(){
     for(int i=0; i< N; i++){
         for (int j=0; j< M; j++){
+            for (int k=0; k< P; k++){
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+}
+
+void deroulage(){
+    for(int i=0; i< N; i++){
+        for (int j=0; j< M; j++){
         	int k;
-            for (int k=0; k< P-7; k+=7){
+            for (int k=0; k< P; k+=8){
                 C[i][j] += A[i][k] * B[k][j];
 		        C[i][j] += A[i][k+1] * B[k+1][j];
 		        C[i][j] += A[i][k+2] * B[k+2][j];
@@ -38,27 +48,12 @@ void multMatrice(){
 }
 
 int main(){
-	A=malloc(N*sizeof(float *));
-	B=malloc(P*sizeof(float *));
-	C=malloc(N*sizeof(float *));
-	
-	for(int i=0;i<N;i++){
-    	A[i] = malloc(P * sizeof(float));
-    	B[i] = malloc(M * sizeof(float));
-    	C[i] = malloc(M * sizeof(float));
-    }
-    
     initialiserMatrices();
+    #ifdef Q1
+    deroulage();
+    #else
     multMatrice();
+    #endif
     
-    for(int i=0;i<N;i++){
-    	free(A[i]);
-    	free(B[i]);
-    	free(C[i]);
-    }
-    
-    free(A);
-    free(B);
-    free(C);
 	return 0;
 }

@@ -1,0 +1,54 @@
+bash -c 'time ./tp2_O2_unrolling'
+
+real    0m4,692s
+user    0m4,684s
+sys     0m0,008s
+
+bash -c 'time ./tp2_O2_unrolling_Q1'
+
+real    0m4,520s
+user    0m4,512s
+sys     0m0,008s
+
+bash -c 'time ./tp2_O2_fl'
+
+real    0m4,651s
+user    0m4,639s
+sys     0m0,012s
+
+//---------------------2eme exec-------------------------
+bash -c 'time ./tp2_O2_unrolling'
+
+real    0m3,815s
+user    0m3,815s
+sys     0m0,000s
+
+bash -c 'time ./tp2_O2_unrolling_Q1'
+
+real    0m3,758s
+user    0m3,750s
+sys     0m0,008s
+
+bash -c 'time ./tp2_O2_fl'
+
+real    0m3,729s
+user    0m3,724s
+sys     0m0,004s
+//---------------------3eme exec-------------------------
+bash -c 'time ./tp2_O2_unrolling'
+
+real    0m3,851s
+user    0m3,818s
+sys     0m0,025s
+
+bash -c 'time ./tp2_O2_unrolling_Q1'
+
+real    0m3,750s
+user    0m3,745s
+sys     0m0,004s
+
+bash -c 'time ./tp2_O2_fl'
+
+real    0m3,627s
+user    0m3,627s
+sys     0m0,000s
