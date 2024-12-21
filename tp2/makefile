@@ -3,9 +3,9 @@ tp2 :
 		gcc -O2 -D Q1 tp2_unrolling.c -o tp2_O2_unrolling_Q1
 		gcc -O2 tp2_unrolling.c -funroll-loops -o tp2_O2_fl
 		
-		gcc -O2 tp2_fusion.c -o tp2_O2_fusion
-		gcc -O2 -D Q1 tp2_fusion.c -o tp2_O2_fusion_Q1
-		gcc -O2 -D Q2 tp2_fusion.c -o tp2_O2_fusion_Q2
+		gcc tp2_fusion.c -o tp2_O0_fusion
+		gcc -D Q1 tp2_fusion.c -o tp2_O0_fusion_Q1
+		gcc -D Q2 tp2_fusion.c -o tp2_O0_fusion_Q2
 
 		gcc -O2 -floop-interchange tp2_interchange.c -o tp2_O2_interchange_fi
 		gcc -O2 -D ijk tp2_interchange.c -o tp2_O2_interchange_ijk
@@ -36,9 +36,9 @@ unrolling :
 		bash -c 'time ./tp2_O2_fl'
 
 fusion :
-		bash -c 'time ./tp2_O2_fusion'
-		bash -c 'time ./tp2_O2_fusion_Q1'
-		bash -c 'time ./tp2_O2_fusion_Q2'
+		bash -c 'time ./tp2_O0_fusion'
+		bash -c 'time ./tp2_O0_fusion_Q1'
+		bash -c 'time ./tp2_O0_fusion_Q2'
 
 interchange :
 		bash -c 'time ./tp2_O2_interchange_ijk'

@@ -55,3 +55,23 @@ bash -c 'time ./tp2_O2_fusion_Q2'
 real    0m5,130s
 user    0m5,130s
 sys     0m0,000s
+
+-------------------------------sans O2-----------------------
+bash -c 'time ./tp2_O0_fusion'
+3001.500000 2.000000 1.000000
+
+real    0m18,132s
+user    0m18,127s
+sys     0m0,004s
+bash -c 'time ./tp2_O0_fusion_Q1'
+3001.500000 2.000000 1.000000
+
+real    0m18,333s
+user    0m18,276s
+sys     0m0,008s
+bash -c 'time ./tp2_O0_fusion_Q2'
+3001.500000 2.000000 1.000000
+
+real    0m16,695s
+user    0m16,679s
+sys     0m0,004s
