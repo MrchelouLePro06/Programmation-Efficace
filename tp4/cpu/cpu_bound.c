@@ -17,8 +17,6 @@ int main(){
 		//printf("x=%f, y=%f, z=%f, t=%f",x,y,z,t);
 		}
 	}
-	
-	
 	return 0;
 }
 

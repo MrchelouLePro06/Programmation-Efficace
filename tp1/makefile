@@ -10,20 +10,20 @@ tp1:
 	)
 	icx -mkl tp1.c -o tp1_mkl
 	
-globale :
+statique :
 	$(foreach comp, $(COMPILERS), \
 		$(foreach opt, $(OPTIMIZATIONS), \
-			$(comp) -$(opt) globale.c -o tp1_globale_$(comp)_$(opt);\
+			$(comp) -$(opt) statique.c -o tp1_statique_$(comp)_$(opt);\
 		) \
 	)
-	icx -mkl globale.c -o tp1_globale_mkl
+	icx -mkl statique.c -o tp1_statique_mkl
 
 functions:
 	$(foreach f, $(FUNCTIONS), \
 		$(foreach comp, $(COMPILERS), \
 			$(foreach opt, $(OPTIMIZATIONS), \
 				$(comp) -$(opt) -D $(f) tp1.c -o tp1_$(comp)_$(opt)_$(f); \
-				$(comp) -$(opt) -D $(f) globale.c -o tp1_globale_$(comp)_$(opt)_$(f); \
+				$(comp) -$(opt) -D $(f) statique.c -o tp1_statique_$(comp)_$(opt)_$(f); \
 			) \
 		) \
 	)
@@ -64,41 +64,41 @@ time_tp1:
 		@echo '--------------------------mkl------------------------------------'
 		bash -c 'time ./tp1_mkl'
 
-time_globale :
+time_statique :
 		@echo '--------------------------gcc------------------------------------'
 		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_globale_gcc_O0'
+		bash -c 'time ./tp1_statique_gcc_O0'
 		
 		@echo "Option d'optimisation -O1"
-		bash -c 'time ./tp1_globale_gcc_O1'
+		bash -c 'time ./tp1_statique_gcc_O1'
 		
 		@echo "Option d'optimisation -O2"
-		bash -c 'time ./tp1_globale_gcc_O2'
+		bash -c 'time ./tp1_statique_gcc_O2'
 		
 		@echo "Option d'optimisation -O3"
-		bash -c 'time ./tp1_globale_gcc_O3'
+		bash -c 'time ./tp1_statique_gcc_O3'
 		
 		@echo "Option d'optimisation -Os"
-		bash -c 'time ./tp1_globale_gcc_Os'
+		bash -c 'time ./tp1_statique_gcc_Os'
 		
 		@echo '--------------------------icx------------------------------------'
 		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_globale_icx_O0'
+		bash -c 'time ./tp1_statique_icx_O0'
 		
 		@echo "Option d'optimisation -O1"
-		bash -c 'time ./tp1_globale_icx_O1'
+		bash -c 'time ./tp1_statique_icx_O1'
 		
 		@echo "Option d'optimisation -O2"
-		bash -c 'time ./tp1_globale_icx_O2'
+		bash -c 'time ./tp1_statique_icx_O2'
 		
 		@echo "Option d'optimisation -O3"
-		bash -c 'time ./tp1_globale_icx_O3'
+		bash -c 'time ./tp1_statique_icx_O3'
 		
 		@echo "Option d'optimisation -Os"
-		bash -c 'time ./tp1_globale_icx_Os'	
+		bash -c 'time ./tp1_statique_icx_Os'	
 		
 		@echo '--------------------------mkl------------------------------------'
-		bash -c 'time ./tp1_globale_mkl'
+		bash -c 'time ./tp1_statique_mkl'
 
 time_mult :
 		@echo "Option d'optimisation pour MULT avec gcc"
@@ -149,7 +149,7 @@ time_scal :
 test_add :
 		@echo '--------------------------gcc------------------------------------'
 		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_globale_gcc_O0_ADD'
+		bash -c 'time ./tp1_statique_gcc_O0_ADD'
 		
 		@echo "Option d'optimisation -O0"
 		bash -c 'time ./tp1_gcc_O0_ADD'
@@ -157,7 +157,7 @@ test_add :
 test_mult :
 		@echo '--------------------------gcc------------------------------------'
 		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_globale_gcc_O0_MULT'
+		bash -c 'time ./tp1_statique_gcc_O0_MULT'
 		
 		@echo "Option d'optimisation -O0"
 		bash -c 'time ./tp1_gcc_O0_MULT'
@@ -166,7 +166,7 @@ test_mult :
 test_scal :
 		@echo '--------------------------gcc------------------------------------'
 		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_globale_gcc_O0_SCAL'
+		bash -c 'time ./tp1_statique_gcc_O0_SCAL'
 		
 		@echo "Option d'optimisation -O0"
 		bash -c 'time ./tp1_gcc_O0_SCAL'
