@@ -52,3 +52,20 @@ bash -c 'time ./tp2_O2_fl'
 real    0m3,627s
 user    0m3,627s
 sys     0m0,000s
+
+//---------------------4eme exec-------------------------
+bash -c 'time ./tp2_O2_unrolling'
+
+real    0m3,888s
+user    0m3,880s
+sys     0m0,008s
+bash -c 'time ./tp2_O2_unrolling_Q1'
+
+real    0m3,622s
+user    0m3,587s
+sys     0m0,004s
+bash -c 'time ./tp2_O2_fl'
+
+real    0m3,696s
+user    0m3,679s
+sys     0m0,016s

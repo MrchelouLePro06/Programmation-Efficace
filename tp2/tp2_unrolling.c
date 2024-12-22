@@ -19,18 +19,9 @@ void initialiserMatrices(){
 void multMatrice(){
     for(int i=0; i< N; i++){
         for (int j=0; j< M; j++){
-            for (int k=0; k< P; k++){
-                C[i][j] += A[i][k] * B[k][j];
-            }
-        }
-    }
-}
-
-void deroulage(){
-    for(int i=0; i< N; i++){
-        for (int j=0; j< M; j++){
-        	int k;
-            for (int k=0; k< P; k+=8){
+        	int k=0;
+            #ifdef Q1
+            for (k; k< P; k+=8){
                 C[i][j] += A[i][k] * B[k][j];
 		        C[i][j] += A[i][k+1] * B[k+1][j];
 		        C[i][j] += A[i][k+2] * B[k+2][j];
@@ -40,20 +31,17 @@ void deroulage(){
 		        C[i][j] += A[i][k+6] * B[k+6][j];
 		        C[i][j] += A[i][k+7] * B[k+7][j];
             }
+            #else
             for (k; k < P; k++) {
             	C[i][j] += A[i][k] * B[k][j];
             }
+            #endif
         }
     }
 }
 
 int main(){
     initialiserMatrices();
-    #ifdef Q1
-    deroulage();
-    #else
     multMatrice();
-    #endif
-    
 	return 0;
 }
