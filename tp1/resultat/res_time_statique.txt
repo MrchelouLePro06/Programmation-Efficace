@@ -1,0 +1,120 @@
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0
+
+real	0m18,981s
+user	0m18,647s
+sys	0m0,180s
+Option d'optimisation -O1
+
+real	0m6,953s
+user	0m6,447s
+sys	0m0,228s
+Option d'optimisation -O2
+
+real	0m6,346s
+user	0m5,869s
+sys	0m0,180s
+Option d'optimisation -O3
+
+real	0m6,407s
+user	0m5,882s
+sys	0m0,216s
+Option d'optimisation -Os
+
+real	0m6,430s
+user	0m5,952s
+sys	0m0,178s
+--------------------------icx------------------------------------
+Option d'optimisation -O0
+
+real	0m14,873s
+user	0m14,537s
+sys	0m0,164s
+Option d'optimisation -O1
+
+real	0m6,800s
+user	0m6,304s
+sys	0m0,204s
+Option d'optimisation -O2
+
+real	0m3,627s
+user	0m3,127s
+sys	0m0,212s
+Option d'optimisation -O3
+
+real	0m3,515s
+user	0m3,076s
+sys	0m0,168s
+Option d'optimisation -Os
+
+real	0m6,043s
+user	0m5,603s
+sys	0m0,160s
+--------------------------mkl------------------------------------
+
+real	0m3,417s
+user	0m3,055s
+sys	0m0,220s
+--------------------------fin exécution--------------------------
+
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0
+
+real	0m17,879s
+user	0m17,459s
+sys	0m0,184s
+Option d'optimisation -O1
+
+real	0m6,242s
+user	0m5,767s
+sys	0m0,196s
+Option d'optimisation -O2
+
+real	0m6,454s
+user	0m5,969s
+sys	0m0,200s
+Option d'optimisation -O3
+
+real	0m6,230s
+user	0m5,831s
+sys	0m0,224s
+Option d'optimisation -Os
+
+real	0m6,186s
+user	0m5,727s
+sys	0m0,180s
+--------------------------icx------------------------------------
+Option d'optimisation -O0
+
+real	0m15,552s
+user	0m15,046s
+sys	0m0,188s
+Option d'optimisation -O1
+
+real	0m6,504s
+user	0m6,167s
+sys	0m0,224s
+Option d'optimisation -O2
+
+real	0m3,900s
+user	0m3,457s
+sys	0m0,144s
+Option d'optimisation -O3
+
+real	0m3,837s
+user	0m3,320s
+sys	0m0,224s
+Option d'optimisation -Os
+
+real	0m6,721s
+user	0m6,208s
+sys	0m0,216s
+--------------------------mkl------------------------------------
+
+real	0m3,851s
+user	0m3,316s
+sys	0m0,184s
+--------------------------fin exécution--------------------------
+

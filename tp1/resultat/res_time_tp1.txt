@@ -1,0 +1,120 @@
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0
+
+real	0m28,914s
+user	0m28,508s
+sys	    0m0,100s
+Option d'optimisation -O1
+
+real	0m14,813s
+user	0m14,583s
+sys	    0m0,048s
+Option d'optimisation -O2
+
+real	0m8,845s
+user	0m8,373s
+sys	    0m0,088s
+Option d'optimisation -O3
+
+real	0m8,925s
+user	0m8,543s
+sys	    0m0,036s
+Option d'optimisation -Os
+
+real	0m11,941s
+user	0m11,679s
+sys	    0m0,080s
+--------------------------icx------------------------------------
+Option d'optimisation -O0
+
+real	0m27,305s
+user	0m27,230s
+sys	    0m0,052s
+Option d'optimisation -O1
+
+real	0m9,197s
+user	0m8,853s
+sys	    0m0,068s
+Option d'optimisation -O2
+
+real	0m9,924s
+user	0m9,530s
+sys	    0m0,096s
+Option d'optimisation -O3
+
+real	0m10,012s
+user	0m9,833s
+sys	    0m0,108s
+Option d'optimisation -Os
+
+real	0m9,614s
+user	0m9,231s
+sys	    0m0,076s
+--------------------------mkl------------------------------------
+
+real	0m9,330s
+user	0m8,909s
+sys	    0m0,076s
+
+--------------------------fin exécution--------------------------
+
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0
+
+real	0m26,922s
+user	0m26,709s
+sys	0m0,108s
+Option d'optimisation -O1
+
+real	0m15,109s
+user	0m14,728s
+sys	0m0,092s
+Option d'optimisation -O2
+
+real	0m8,080s
+user	0m7,996s
+sys	0m0,068s
+Option d'optimisation -O3
+
+real	0m8,652s
+user	0m8,173s
+sys	0m0,084s
+Option d'optimisation -Os
+
+real	0m11,730s
+user	0m11,364s
+sys	0m0,084s
+--------------------------icx------------------------------------
+Option d'optimisation -O0
+
+real	0m26,090s
+user	0m26,008s
+sys	0m0,080s
+Option d'optimisation -O1
+
+real	0m9,096s
+user	0m8,638s
+sys	0m0,056s
+Option d'optimisation -O2
+
+real	0m8,917s
+user	0m8,765s
+sys	0m0,048s
+Option d'optimisation -O3
+
+real	0m8,252s
+user	0m7,902s
+sys	0m0,076s
+Option d'optimisation -Os
+
+real	0m8,452s
+user	0m8,116s
+sys	0m0,054s
+--------------------------mkl------------------------------------
+
+real	0m9,292s
+user	0m8,946s
+sys	0m0,060s
+--------------------------fin exécution--------------------------

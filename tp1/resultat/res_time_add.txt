@@ -1,0 +1,112 @@
+--------------------------début exécution------------------------
+Option d'optimisation pour ADD avec gcc
+Option d'optimisation -O0
+
+real	0m0,431s
+user	0m0,299s
+sys	0m0,132s
+Option d'optimisation -O1
+
+real	0m0,354s
+user	0m0,225s
+sys	0m0,128s
+Option d'optimisation -O2
+
+real	0m0,326s
+user	0m0,195s
+sys	0m0,131s
+Option d'optimisation -O3
+
+real	0m0,255s
+user	0m0,096s
+sys	0m0,159s
+Option d'optimisation -Os
+
+real	0m0,370s
+user	0m0,193s
+sys	0m0,177s
+Option d'optimisation pour ADD avec icx
+Option d'optimisation -O0
+
+real	0m0,460s
+user	0m0,316s
+sys	0m0,144s
+Option d'optimisation -O1
+
+real	0m0,371s
+user	0m0,188s
+sys	0m0,184s
+Option d'optimisation -O2
+
+real	0m0,242s
+user	0m0,080s
+sys	0m0,161s
+Option d'optimisation -O3
+
+real	0m0,290s
+user	0m0,145s
+sys	0m0,145s
+Option d'optimisation -Os
+
+real	0m0,462s
+user	0m0,279s
+sys	0m0,183s
+--------------------------fin exécution--------------------------
+
+
+--------------------------début exécution------------------------
+Option d'optimisation pour ADD avec gcc
+Option d'optimisation -O0
+
+real	0m0,455s
+user	0m0,307s
+sys	0m0,148s
+Option d'optimisation -O1
+
+real	0m0,388s
+user	0m0,260s
+sys	0m0,128s
+Option d'optimisation -O2
+
+real	0m0,363s
+user	0m0,214s
+sys	0m0,149s
+Option d'optimisation -O3
+
+real	0m0,230s
+user	0m0,091s
+sys	0m0,139s
+Option d'optimisation -Os
+
+real	0m0,401s
+user	0m0,270s
+sys	0m0,131s
+Option d'optimisation pour ADD avec icx
+Option d'optimisation -O0
+
+real	0m0,479s
+user	0m0,334s
+sys	0m0,143s
+Option d'optimisation -O1
+
+real	0m0,408s
+user	0m0,267s
+sys	0m0,140s
+Option d'optimisation -O2
+
+real	0m0,238s
+user	0m0,091s
+sys	0m0,146s
+Option d'optimisation -O3
+
+real	0m0,263s
+user	0m0,072s
+sys	0m0,189s
+Option d'optimisation -Os
+
+real	0m0,338s
+user	0m0,189s
+sys	0m0,149s
+--------------------------fin exécution--------------------------
+
+

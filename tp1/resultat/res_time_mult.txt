@@ -1,0 +1,112 @@
+--------------------------début exécution------------------------
+Option d'optimisation pour MULT avec gcc
+Option d'optimisation -O0
+
+real	0m28,377s
+user	0m28,109s
+sys	0m0,216s
+Option d'optimisation -O1
+
+real	0m18,972s
+user	0m18,557s
+sys	0m0,220s
+Option d'optimisation -O2
+
+real	0m10,027s
+user	0m9,525s
+sys	0m0,208s
+Option d'optimisation -O3
+
+real	0m9,024s
+user	0m8,584s
+sys	0m0,188s
+Option d'optimisation -Os
+
+real	0m13,188s
+user	0m12,775s
+sys	0m0,216s
+Option d'optimisation pour MULT avec icx
+Option d'optimisation -O0
+
+real	0m28,764s
+user	0m28,516s
+sys	0m0,240s
+Option d'optimisation -O1
+
+real	0m8,971s
+user	0m8,651s
+sys	0m0,216s
+Option d'optimisation -O2
+
+real	0m8,767s
+user	0m8,336s
+sys	0m0,196s
+Option d'optimisation -O3
+
+real	0m9,718s
+user	0m9,257s
+sys	0m0,220s
+Option d'optimisation -Os
+
+real	0m10,072s
+user	0m9,766s
+sys	0m0,220s
+--------------------------fin exécution--------------------------
+
+
+--------------------------début exécution------------------------
+Option d'optimisation pour MULT avec gcc
+Option d'optimisation -O0
+
+real	0m30,916s
+user	0m30,583s
+sys	0m0,264s
+Option d'optimisation -O1
+
+real	0m18,926s
+user	0m18,755s
+sys	0m0,156s
+Option d'optimisation -O2
+
+real	0m10,434s
+user	0m10,055s
+sys	0m0,180s
+Option d'optimisation -O3
+
+real	0m9,563s
+user	0m9,091s
+sys	0m0,204s
+Option d'optimisation -Os
+
+real	0m13,009s
+user	0m12,514s
+sys	0m0,180s
+Option d'optimisation pour MULT avec icx
+Option d'optimisation -O0
+
+real	0m30,034s
+user	0m29,825s
+sys	0m0,200s
+Option d'optimisation -O1
+
+real	0m9,383s
+user	0m9,026s
+sys	0m0,168s
+Option d'optimisation -O2
+
+real	0m9,249s
+user	0m8,778s
+sys	0m0,264s
+Option d'optimisation -O3
+
+real	0m8,921s
+user	0m8,526s
+sys	0m0,188s
+Option d'optimisation -Os
+
+real	0m8,713s
+user	0m8,492s
+sys	0m0,164s
+--------------------------fin exécution--------------------------
+
+

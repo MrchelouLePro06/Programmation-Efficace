@@ -3,7 +3,7 @@
 #define N 1432 //1432 1450 1500
 #define M 1432
 #define P 1432
-#define T 8192000
+#define T 81920000
 
 float A[N][P], B[P][M], C[N][M];
 float As[T], A1[T], B1[T], C1[T];

@@ -29,153 +29,204 @@ functions:
 	)
 
 time_tp1:
-		@echo '--------------------------gcc------------------------------------'
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_gcc_O0'
+		@echo '--------------------------début exécution------------------------' >> resultat/res_time_tp1.txt 2>&1
+		@echo '--------------------------gcc------------------------------------' >> resultat/res_time_tp1.txt 2>&1
+		@echo "Option d'optimisation -O0" >> resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_gcc_O0' >> resultat/res_time_tp1.txt 2>&1
 		
-		@echo "Option d'optimisation -O1"
-		bash -c 'time ./tp1_gcc_O1'
+		@echo "Option d'optimisation -O1" >> resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_gcc_O1' >>resultat/res_time_tp1.txt 2>&1
 		
-		@echo "Option d'optimisation -O2"
-		bash -c 'time ./tp1_gcc_O2'
+		@echo "Option d'optimisation -O2" >>resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_gcc_O2' >>resultat/res_time_tp1.txt 2>&1
 		
-		@echo "Option d'optimisation -O3"
-		bash -c 'time ./tp1_gcc_O3'
+		@echo "Option d'optimisation -O3" >>resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_gcc_O3' >>resultat/res_time_tp1.txt 2>&1
 		
-		@echo "Option d'optimisation -Os"
-		bash -c 'time ./tp1_gcc_Os'
+		@echo "Option d'optimisation -Os" >>resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_gcc_Os' >>resultat/res_time_tp1.txt 2>&1
+
+		@echo '--------------------------icx------------------------------------' >>resultat/res_time_tp1.txt 2>&1
+		@echo "Option d'optimisation -O0" >>resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_icx_O0' >>resultat/res_time_tp1.txt 2>&1
 		
-		@echo '--------------------------icx------------------------------------'
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_icx_O0'
+		@echo "Option d'optimisation -O1" >>resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_icx_O1' >>resultat/res_time_tp1.txt 2>&1
 		
-		@echo "Option d'optimisation -O1"
-		bash -c 'time ./tp1_icx_O1'
+		@echo "Option d'optimisation -O2" >>resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_icx_O2' >>resultat/res_time_tp1.txt 2>&1
 		
-		@echo "Option d'optimisation -O2"
-		bash -c 'time ./tp1_icx_O2'
+		@echo "Option d'optimisation -O3" >>resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_icx_O3' >>resultat/res_time_tp1.txt 2>&1
 		
-		@echo "Option d'optimisation -O3"
-		bash -c 'time ./tp1_icx_O3'
+		@echo "Option d'optimisation -Os" >>resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_icx_Os'	 >>resultat/res_time_tp1.txt 2>&1
 		
-		@echo "Option d'optimisation -Os"
-		bash -c 'time ./tp1_icx_Os'	
-		
-		@echo '--------------------------mkl------------------------------------'
-		bash -c 'time ./tp1_mkl'
+		@echo '--------------------------mkl------------------------------------' >>resultat/res_time_tp1.txt 2>&1
+		bash -c 'time ./tp1_mkl' >>resultat/res_time_tp1.txt 2>&1
+		@echo '--------------------------fin exécution--------------------------\n\n' >>resultat/res_time_tp1.txt 2>&1
 
 time_statique :
-		@echo '--------------------------gcc------------------------------------'
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_statique_gcc_O0'
+		@echo '--------------------------début exécution------------------------' >> resultat/res_time_statique.txt 2>&1
+		@echo '--------------------------gcc------------------------------------' >>resultat/res_time_statique.txt 2>&1
+		@echo "Option d'optimisation -O0">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_gcc_O0'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo "Option d'optimisation -O1"
-		bash -c 'time ./tp1_statique_gcc_O1'
+		@echo "Option d'optimisation -O1">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_gcc_O1'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo "Option d'optimisation -O2"
-		bash -c 'time ./tp1_statique_gcc_O2'
+		@echo "Option d'optimisation -O2">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_gcc_O2'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo "Option d'optimisation -O3"
-		bash -c 'time ./tp1_statique_gcc_O3'
+		@echo "Option d'optimisation -O3">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_gcc_O3'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo "Option d'optimisation -Os"
-		bash -c 'time ./tp1_statique_gcc_Os'
+		@echo "Option d'optimisation -Os">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_gcc_Os'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo '--------------------------icx------------------------------------'
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_statique_icx_O0'
+		@echo '--------------------------icx------------------------------------'>>resultat/res_time_statique.txt 2>&1
+		@echo "Option d'optimisation -O0">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_icx_O0'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo "Option d'optimisation -O1"
-		bash -c 'time ./tp1_statique_icx_O1'
+		@echo "Option d'optimisation -O1">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_icx_O1'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo "Option d'optimisation -O2"
-		bash -c 'time ./tp1_statique_icx_O2'
+		@echo "Option d'optimisation -O2">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_icx_O2'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo "Option d'optimisation -O3"
-		bash -c 'time ./tp1_statique_icx_O3'
+		@echo "Option d'optimisation -O3">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_icx_O3'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo "Option d'optimisation -Os"
-		bash -c 'time ./tp1_statique_icx_Os'	
+		@echo "Option d'optimisation -Os">>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_icx_Os'>>resultat/res_time_statique.txt 2>&1
 		
-		@echo '--------------------------mkl------------------------------------'
-		bash -c 'time ./tp1_statique_mkl'
+		@echo '--------------------------mkl------------------------------------'>>resultat/res_time_statique.txt 2>&1
+		bash -c 'time ./tp1_statique_mkl'>>resultat/res_time_statique.txt 2>&1
+		@echo '--------------------------fin exécution--------------------------\n\n' >>resultat/res_time_statique.txt 2>&1
 
 time_mult :
-		@echo "Option d'optimisation pour MULT avec gcc"
-		bash -c 'time ./tp1_gcc_O0_MULT'
-		bash -c 'time ./tp1_gcc_O1_MULT'
-		bash -c 'time ./tp1_gcc_O2_MULT'
-		bash -c 'time ./tp1_gcc_O3_MULT'
-		bash -c 'time ./tp1_gcc_Os_MULT'
+		@echo '--------------------------début exécution------------------------'>>resultat/res_time_mult.txt 2>&1
+		@echo "Option d'optimisation pour MULT avec gcc" >>resultat/res_time_mult.txt 2>&1
+
+		@echo "Option d'optimisation -O0">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_gcc_O0_MULT'>>resultat/res_time_mult.txt 2>&1
+		@echo "Option d'optimisation -O1">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_gcc_O1_MULT'>>resultat/res_time_mult.txt 2>&1
+		@echo "Option d'optimisation -O2">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_gcc_O2_MULT'>>resultat/res_time_mult.txt 2>&1
+		@echo "Option d'optimisation -O3">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_gcc_O3_MULT'>>resultat/res_time_mult.txt 2>&1
+		@echo "Option d'optimisation -Os">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_gcc_Os_MULT'>>resultat/res_time_mult.txt 2>&1
 		
-		@echo "Option d'optimisation pour MULT avec icx"
-		bash -c 'time ./tp1_icx_O0_MULT'
-		bash -c 'time ./tp1_icx_O1_MULT'
-		bash -c 'time ./tp1_icx_O2_MULT'
-		bash -c 'time ./tp1_icx_O3_MULT'
-		bash -c 'time ./tp1_icx_Os_MULT'
+		@echo "Option d'optimisation pour MULT avec icx">>resultat/res_time_mult.txt 2>&1
+
+		@echo "Option d'optimisation -O0">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_icx_O0_MULT'>>resultat/res_time_mult.txt 2>&1
+		@echo "Option d'optimisation -O1">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_icx_O1_MULT'>>resultat/res_time_mult.txt 2>&1
+		@echo "Option d'optimisation -O2">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_icx_O2_MULT'>>resultat/res_time_mult.txt 2>&1
+		@echo "Option d'optimisation -O3">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_icx_O3_MULT'>>resultat/res_time_mult.txt 2>&1
+		@echo "Option d'optimisation -Os">>resultat/res_time_mult.txt 2>&1
+		bash -c 'time ./tp1_icx_Os_MULT'>>resultat/res_time_mult.txt 2>&1
+		@echo '--------------------------fin exécution--------------------------\n\n'>>resultat/res_time_mult.txt 2>&1
 		
 time_add :
-		@echo "Option d'optimisation pour ADD avec gcc"
-		bash -c 'time ./tp1_gcc_O0_ADD'
-		bash -c 'time ./tp1_gcc_O1_ADD'
-		bash -c 'time ./tp1_gcc_O2_ADD'
-		bash -c 'time ./tp1_gcc_O3_ADD'
-		bash -c 'time ./tp1_gcc_Os_ADD'
+		@echo '--------------------------début exécution------------------------'>>resultat/res_time_add.txt 2>&1
+		@echo "Option d'optimisation pour ADD avec gcc">>resultat/res_time_add.txt 2>&1
+
+		@echo "Option d'optimisation -O0">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_gcc_O0_ADD'>>resultat/res_time_add.txt 2>&1
+		@echo "Option d'optimisation -O1">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_gcc_O1_ADD'>>resultat/res_time_add.txt 2>&1
+		@echo "Option d'optimisation -O2">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_gcc_O2_ADD'>>resultat/res_time_add.txt 2>&1
+		@echo "Option d'optimisation -O3">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_gcc_O3_ADD'>>resultat/res_time_add.txt 2>&1
+		@echo "Option d'optimisation -Os">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_gcc_Os_ADD'>>resultat/res_time_add.txt 2>&1
 		
-		
-		@echo "Option d'optimisation pour ADD avec icx"
-		bash -c 'time ./tp1_icx_O0_ADD'
-		bash -c 'time ./tp1_icx_O1_ADD'
-		bash -c 'time ./tp1_icx_O2_ADD'
-		bash -c 'time ./tp1_icx_O3_ADD'
-		bash -c 'time ./tp1_icx_Os_ADD'
+		@echo "Option d'optimisation pour ADD avec icx">>resultat/res_time_add.txt 2>&1
+
+		@echo "Option d'optimisation -O0">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_icx_O0_ADD'>>resultat/res_time_add.txt 2>&1
+		@echo "Option d'optimisation -O1">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_icx_O1_ADD'>>resultat/res_time_add.txt 2>&1
+		@echo "Option d'optimisation -O2">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_icx_O2_ADD'>>resultat/res_time_add.txt 2>&1
+		@echo "Option d'optimisation -O3">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_icx_O3_ADD'>>resultat/res_time_add.txt 2>&1
+		@echo "Option d'optimisation -Os">>resultat/res_time_add.txt 2>&1
+		bash -c 'time ./tp1_icx_Os_ADD'>>resultat/res_time_add.txt 2>&1
+		@echo '--------------------------fin exécution--------------------------\n\n'>>resultat/res_time_add.txt 2>&1
 		
 time_scal :
-		@echo "Option d'optimisation pour SCAL avec gcc"
-		bash -c 'time ./tp1_gcc_O0_SCAL'
-		bash -c 'time ./tp1_gcc_O1_SCAL'
-		bash -c 'time ./tp1_gcc_O2_SCAL'
-		bash -c 'time ./tp1_gcc_O3_SCAL'
-		bash -c 'time ./tp1_gcc_Os_SCAL'
+		@echo '--------------------------début exécution------------------------'>>resultat/res_time_scal.txt 2>&1
+		@echo "Option d'optimisation pour SCAL avec gcc">>resultat/res_time_scal.txt 2>&1
+
+		@echo "Option d'optimisation -O0">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_gcc_O0_SCAL'>>resultat/res_time_scal.txt 2>&1
+		@echo "Option d'optimisation -O1">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_gcc_O1_SCAL'>>resultat/res_time_scal.txt 2>&1
+		@echo "Option d'optimisation -O2">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_gcc_O2_SCAL'>>resultat/res_time_scal.txt 2>&1
+		@echo "Option d'optimisation -O3">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_gcc_O3_SCAL'>>resultat/res_time_scal.txt 2>&1
+		@echo "Option d'optimisation -Os">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_gcc_Os_SCAL'>>resultat/res_time_scal.txt 2>&1
 		
-		@echo "Option d'optimisation pour SCAL avec icx"
-		bash -c 'time ./tp1_icx_O0_SCAL'
-		bash -c 'time ./tp1_icx_O1_SCAL'
-		bash -c 'time ./tp1_gcc_O2_SCAL'
-		bash -c 'time ./tp1_gcc_O3_SCAL'
-		bash -c 'time ./tp1_gcc_Os_SCAL'
+		@echo "Option d'optimisation pour SCAL avec icx">>resultat/res_time_scal.txt 2>&1
+
+		@echo "Option d'optimisation -O0">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_icx_O0_SCAL'>>resultat/res_time_scal.txt 2>&1
+		@echo "Option d'optimisation -O1">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_icx_O1_SCAL'>>resultat/res_time_scal.txt 2>&1
+		@echo "Option d'optimisation -O2">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_gcc_O2_SCAL'>>resultat/res_time_scal.txt 2>&1
+		@echo "Option d'optimisation -O3">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_gcc_O3_SCAL'>>resultat/res_time_scal.txt 2>&1
+		@echo "Option d'optimisation -Os">>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./tp1_gcc_Os_SCAL'>>resultat/res_time_scal.txt 2>&1
+		@echo '--------------------------fin exécution--------------------------\n\n'>>resultat/res_time_scal.txt 2>&1
 		
 test_add :
-		@echo '--------------------------gcc------------------------------------'
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_statique_gcc_O0_ADD'
+		@echo '--------------------------début exécution------------------------'>>resultat/res_test_add.txt 2>&1
+		@echo '--------------------------gcc------------------------------------'>>resultat/res_test_add.txt 2>&1
+		@echo "Option d'optimisation -O0">>resultat/res_test_add.txt 2>&1
+		bash -c 'time ./tp1_statique_gcc_O0_ADD'>>resultat/res_test_add.txt 2>&1
 		
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_gcc_O0_ADD'
+		@echo "Option d'optimisation -O0">>resultat/res_test_add.txt 2>&1
+		bash -c 'time ./tp1_gcc_O0_ADD'>>resultat/res_test_add.txt 2>&1
+		@echo '--------------------------fin exécution--------------------------\n\n'>>resultat/res_test_add.txt 2>&1
 		
 test_mult :
-		@echo '--------------------------gcc------------------------------------'
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_statique_gcc_O0_MULT'
+		@echo '--------------------------début exécution------------------------'>>resultat/res_test_mult.txt 2>&1
+		@echo '--------------------------gcc------------------------------------'>>resultat/res_test_mult.txt 2>&1
+		@echo "Option d'optimisation -O0">>resultat/res_test_mult.txt 2>&1
+		bash -c 'time ./tp1_statique_gcc_O0_MULT'>>resultat/res_test_mult.txt 2>&1
 		
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_gcc_O0_MULT'
+		@echo "Option d'optimisation -O0">>resultat/res_test_mult.txt 2>&1
+		bash -c 'time ./tp1_gcc_O0_MULT'>>resultat/res_test_mult.txt 2>&1
+		@echo '--------------------------fin exécution--------------------------\n\n'>>resultat/res_test_mult.txt 2>&1
 		
-
 test_scal :
-		@echo '--------------------------gcc------------------------------------'
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_statique_gcc_O0_SCAL'
+		@echo '--------------------------début exécution------------------------'>>resultat/res_test_scal.txt 2>&1
+		@echo '--------------------------gcc------------------------------------'>>resultat/res_test_scal.txt 2>&1
+		@echo "Option d'optimisation -O0">>resultat/res_test_scal.txt 2>&1
+		bash -c 'time ./tp1_statique_gcc_O0_SCAL'>>resultat/res_test_scal.txt 2>&1
 		
-		@echo "Option d'optimisation -O0"
-		bash -c 'time ./tp1_gcc_O0_SCAL'
+		@echo "Option d'optimisation -O0">>resultat/res_test_scal.txt 2>&1
+		bash -c 'time ./tp1_gcc_O0_SCAL'>>resultat/res_test_scal.txt 2>&1
+		@echo '--------------------------fin exécution--------------------------\n\n'>>resultat/res_test_scal.txt 2>&1
 	
 gprof:
-		gcc -pg -O2 tp1.c -o tp1_gprof
+		@echo '--------------------------début exécution------------------------'
+		gcc -pg -O0 tp1.c -o tp1_gprof
 		./tp1_gprof
-		gprof -b tp1_gprof gmon.out > res.txt
-		cat res.txt
+		gprof -b tp1_gprof gmon.out > resultat/res.txt
+		@echo '--------------------------fin exécution--------------------------'
 
 fprofile:
 		gcc tp1.c -fprofile-generate -o tp1_fpg
@@ -192,9 +243,7 @@ fprofile:
 clean :
 		rm tp1_*
 		rm error.log
-		if [ -f res.txt ]; then rm res.txt; fi
 		if [ -f gmon.out ]; then rm gmon.out; fi
 		if [ -f *.gcda ]; then rm *.gcda; fi
 		if [ -f *.profraw ]; then rm *.profraw; fi
 		if [ -f *.out ]; then rm *.out; fi
-		

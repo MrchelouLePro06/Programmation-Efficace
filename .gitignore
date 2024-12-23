@@ -1,6 +1,7 @@
 #from tp1 :
 tp1_*
 error.log
+gmon.out
 
 #from tp2 :
 tp2_O*
