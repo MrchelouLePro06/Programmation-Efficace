@@ -118,3 +118,133 @@ user	0m3,316s
 sys	0m0,184s
 --------------------------fin exécution--------------------------
 
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0
+bash: ligne 1: ./statique_gcc_O0: Aucun fichier ou dossier de ce type
+
+real	0m0,001s
+user	0m0,001s
+sys	0m0,000s
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0
+
+real	0m14,992s
+user	0m14,669s
+sys	0m0,096s
+Option d'optimisation -O1
+
+real	0m5,812s
+user	0m5,327s
+sys	0m0,184s
+Option d'optimisation -O2
+
+real	0m5,617s
+user	0m5,171s
+sys	0m0,172s
+Option d'optimisation -O3
+
+real	0m5,659s
+user	0m5,227s
+sys	0m0,164s
+Option d'optimisation -Os
+
+real	0m6,738s
+user	0m6,162s
+sys	0m0,216s
+--------------------------icx------------------------------------
+Option d'optimisation -O0
+
+real	0m13,240s
+user	0m12,768s
+sys	0m0,200s
+Option d'optimisation -O1
+
+real	0m6,131s
+user	0m5,655s
+sys	0m0,200s
+Option d'optimisation -O2
+
+real	0m3,613s
+user	0m3,020s
+sys	0m0,236s
+Option d'optimisation -O3
+
+real	0m3,503s
+user	0m2,902s
+sys	0m0,248s
+Option d'optimisation -Os
+
+real	0m6,281s
+user	0m5,749s
+sys	0m0,260s
+--------------------------mkl------------------------------------
+
+real	0m3,679s
+user	0m3,143s
+sys	0m0,196s
+--------------------------fin exécution--------------------------
+
+
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0
+
+real	0m14,957s
+user	0m14,566s
+sys	0m0,116s
+Option d'optimisation -O1
+
+real	0m5,789s
+user	0m5,341s
+sys	0m0,180s
+Option d'optimisation -O2
+
+real	0m5,332s
+user	0m5,151s
+sys	0m0,177s
+Option d'optimisation -O3
+
+real	0m5,644s
+user	0m5,190s
+sys	0m0,180s
+Option d'optimisation -Os
+
+real	0m5,692s
+user	0m5,251s
+sys	0m0,164s
+--------------------------icx------------------------------------
+Option d'optimisation -O0
+
+real	0m12,504s
+user	0m12,074s
+sys	0m0,152s
+Option d'optimisation -O1
+
+real	0m6,185s
+user	0m5,719s
+sys	0m0,180s
+Option d'optimisation -O2
+
+real	0m3,397s
+user	0m2,939s
+sys	0m0,208s
+Option d'optimisation -O3
+
+real	0m3,474s
+user	0m3,044s
+sys	0m0,152s
+Option d'optimisation -Os
+
+real	0m5,894s
+user	0m5,426s
+sys	0m0,192s
+--------------------------mkl------------------------------------
+
+real	0m3,263s
+user	0m2,745s
+sys	0m0,168s
+--------------------------fin exécution--------------------------
+
+

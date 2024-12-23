@@ -1,15 +1,38 @@
 --------------------------début exécution------------------------
 --------------------------gcc------------------------------------
-Option d'optimisation -O0
+Option d'optimisation -O0 en statique
 
-real	0m15,399s
-user	0m14,929s
-sys	0m0,160s
-Option d'optimisation -O0
+real	0m18,018s
+user	0m17,749s
+sys	0m0,240s
+Option d'optimisation -O0 en dynamique
 
-real	0m25,105s
-user	0m24,929s
-sys	0m0,164s
+real	0m33,561s
+user	0m33,334s
+sys	0m0,204s
 --------------------------fin exécution--------------------------
 
 
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0 en statique
+
+real	0m17,303s
+user	0m17,007s
+sys	0m0,192s
+Option d'optimisation -O0 en dynamique
+
+real	0m28,881s
+user	0m28,570s
+sys	0m0,232s
+--------------------------fin exécution--------------------------
+
+
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0 en statique
+bash: ligne 1: ./statique_gcc_O0_MULT: Aucun fichier ou dossier de ce type
+
+real	0m0,000s
+user	0m0,000s
+sys	0m0,000s

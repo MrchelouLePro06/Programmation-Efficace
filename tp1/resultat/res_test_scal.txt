@@ -1,0 +1,38 @@
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0 en statique
+
+real	0m0,471s
+user	0m0,327s
+sys	0m0,144s
+Option d'optimisation -O0 en dynamique
+
+real	0m0,425s
+user	0m0,284s
+sys	0m0,140s
+--------------------------fin exécution--------------------------
+
+
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0 en statique
+
+real	0m0,480s
+user	0m0,344s
+sys	0m0,136s
+Option d'optimisation -O0 en dynamique
+
+real	0m0,418s
+user	0m0,287s
+sys	0m0,131s
+--------------------------fin exécution--------------------------
+
+
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0 en statique
+bash: ligne 1: ./statique_gcc_O0_SCAL: Aucun fichier ou dossier de ce type
+
+real	0m0,000s
+user	0m0,001s
+sys	0m0,000s

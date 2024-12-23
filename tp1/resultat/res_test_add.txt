@@ -1,15 +1,38 @@
 --------------------------début exécution------------------------
 --------------------------gcc------------------------------------
-Option d'optimisation -O0
+Option d'optimisation -O0 en statique
 
-real	0m0,482s
-user	0m0,373s
-sys	0m0,108s
-Option d'optimisation -O0
+real	0m0,548s
+user	0m0,400s
+sys	0m0,148s
+Option d'optimisation -O0 en dynamique
 
-real	0m0,450s
-user	0m0,297s
-sys	0m0,152s
+real	0m0,454s
+user	0m0,281s
+sys	0m0,173s
 --------------------------fin exécution--------------------------
 
 
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0 en statique
+
+real	0m0,562s
+user	0m0,426s
+sys	0m0,136s
+Option d'optimisation -O0 en dynamique
+
+real	0m0,441s
+user	0m0,297s
+sys	0m0,144s
+--------------------------fin exécution--------------------------
+
+
+--------------------------début exécution------------------------
+--------------------------gcc------------------------------------
+Option d'optimisation -O0 en statique
+bash: ligne 1: ./statique_gcc_O0_ADD: Aucun fichier ou dossier de ce type
+
+real	0m0,000s
+user	0m0,001s
+sys	0m0,000s

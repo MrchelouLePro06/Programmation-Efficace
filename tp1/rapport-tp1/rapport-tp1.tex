@@ -1,0 +1,557 @@
+\documentclass{rapport}
+\usepackage[utf8]{inputenc}
+
+\usepackage{pifont} % Pour les symboles appelés par la macro \ding
+\usepackage{url} % Comme son nom l'indique, pour les url...
+
+\usetikzlibrary{positioning} % Bibliothèque tikz pour positionner des nœuds relativement à d'autres
+
+\usepackage[colorlinks, citecolor=red!60!green, linkcolor=blue!60!green, urlcolor=magenta]{hyperref} % Pour que les liens soient cliquables. Les options permettent de mettre les liens en couleur.
+
+\usepackage{algorithm}
+\usepackage{algo}
+\usepackage{colorationSyntaxique}
+\usepackage{amsmath}
+\usepackage{diagbox}
+
+% Pour un rapport en français 
+\usepackage[francais]{babel} % Commenter pour un rapport en anglais
+\renewcommand\bibsection{\section*{Bibliographie}} % Commenter pour un rapport en anglais
+
+% \englishTitlePage % Décommenter pour une page de titre en anglais
+
+\usepackage{listings}
+\lstset{                  % Specify language
+    basicstyle=\ttfamily\small,     % Code font and size
+    keywordstyle=\color{blue},      % Color for keywords
+    commentstyle=\color{gray},      % Color for comments
+    stringstyle=\color{red},        % Color for strings
+    numbers=left,                   % Add line numbers
+    numberstyle=\tiny\color{gray},  % Style for line numbers
+    % frame=single,                   % Add a border around code
+    breaklines=true,                % Line wrapping
+    % backgroundcolor=\color{gray!10} % Light gray background
+}
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{\thesection.\ #1}{}}
+\fancyfoot{}
+
+\fancyhead[LE]{\textsl{\leftmark}}
+\fancyhead[RE, LO]{\textbf{\thepage}}
+\fancyhead[RO]{\textsl{\rightmark}}
+
+\def\Latex{\LaTeX\xspace}
+\def\etc{\textit{etc.}\xspace}
+
+
+
+\title{Évaluation des performances d’un programme et optimisations de code par compilation}
+\author{Mehdi Mansour}
+\supervisor{Professeur Sid Touati}
+\date{Premier semestre de l'année 2024-2025}
+
+%\universityname{Université Côte d'Azur} % Nom de l'université.
+\type{TP1} % Type de document
+% \formation{Master Informatique} % Nom de la formation
+
+% Retrouver les autres options possibles dans le document rapport.pdf
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    Ce rapport a pour objectif de détailler les différents résultats obtenus lors de ce TP1 disponible ci-après : \url{https://lms.univ-cotedazur.fr/2024/pluginfile.php/228842/mod_resource/content/10/Eval-Perf.pdf}.
+     \end{abstract}
+    %\newcommand{\ppc}{programmation par contraintes\xspace}
+\subsection*{Architecture utilisé pour ce TP}
+     \noindent
+    CPU name:	Intel(R) Core(TM) i7-10700F CPU @ 2.90GHz
+    \newline
+    CPU type:	Intel Cometlake processor
+    \newline
+    CPU stepping:	5
+    \newline
+    \newline
+    \noindent
+    Hardware Thread Topology
+    \newline
+    \newline
+    Sockets:		1
+    \newline
+    Cores per socket:	8
+    \newline
+    Threads per core:	2
+    \newline
+    Socket 0:		( 0 8 1 9 2 10 3 11 4 12 5 13 6 14 7 15 )
+    \newline
+    \newline
+    NUMA domains:		1
+    \newline
+    Domain:			0
+    \newline
+    Processors:		( 0 8 1 9 2 10 3 11 4 12 5 13 6 14 7 15 )
+    \newline
+    Distances:		10
+    \newline
+    Free memory:		21746.9 MB
+    \newline
+    Total memory:		31991.4 MB
+    \newline
+
+\subsection*{Topologie du PC}
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \multicolumn{9}{|c|}{Topologie graphique} \\
+        \hline
+        Core & \enspace0\enspace\enspace8 &\enspace1\enspace\enspace9 &\enspace2\enspace\enspace10 &\enspace3\enspace\enspace11 &\enspace4\enspace\enspace12 &\enspace5\enspace\enspace13 &\enspace6\enspace\enspace14 &\enspace7\enspace\enspace15\\
+        \hline
+        Cache L1& \enspace32 kB &\enspace32 kB &\enspace32 kB &\enspace32 kB &\enspace32 kB&\enspace32 kB&\enspace32 kB&\enspace32 kB\\
+        \hline
+        Cache L2 & 256 kB & 256 kB & 256 kB & 256 kB & 256 kB& 256 kB& 256 kB& 256 kB\\
+        \hline
+        Cache L3 & \multicolumn{8}{|c|}{16 MB} \\
+        \hline
+    \end{tabular}
+    %\caption{Les différents niveaux de cache par cœur}
+    \label{tab:graph_characteristics}
+    \end{table}
+  
+  \clearpage
+  \tableofcontents
+
+  \clearpage
+%«»
+
+  \part{Introduction}
+    L'objectif de ce TP est d'analyser les résultats d'exécution de deux fichiers C (disponibles dans l'archive fournisse) pour évaluer leur performances.
+    Ces fichier «.c», nommés «dynamique.c» et «statique.c» sont composés de plusieurs fonctions décrient dans le sujet du TP : 
+    \begin{itemize}
+        \item Addition de deux vecteurs de valeurs flottantes C = A + B
+    \end{itemize}
+    \begin{itemize}
+        \item Multiplication de deux matrices C = A × B
+    \end{itemize}
+    \begin{itemize}
+        \item Multiplication d’un vecteur par un scalaire A = A × s
+    \end{itemize}
+    Lors de ce tp nous utiliserons plusieurs outils comme la commande \textit{time} ou \textit{gprof} pour analyser notre code, ainsi que des options d'optimisations pour améliorer sa rapidité d'exécution.
+    \newline
+    \newline
+    \indent Ces analyses sont nécessaires pour optimiser les bouts de code qui prennent beaucoup de temps. Nous pouvons à la compilation, réduire ce temps de calcul grâce à des options d'optimisation que nous développerons plus tard (voir man gcc).     
+
+  %\pageblanche
+  \clearpage
+  \part{Réalisation des benchmarks}
+  
+    Dans cette partie nous réaliserons des benchmarks pour avoir un ordre d'idée du temps de calcul de notre programme.
+    Un benchmark est une série de tests réalisée pour analyser les performances d'un appareil informatique, composants (ex : carte graphique) ou dans notre cas d'un programme.
+    
+    \section{Détail des fonctions}
+      Dans cette partie nous allons détaillé les fonctions décrient dans l'introduction. Nous utiliserons des matrices et vecteurs avec des données déclarées statiquement comme globales et des données allouées dynamiquement avec malloc. Les données sont des valeurs flottantes. Dans chaque fonctions, on print dans un fichier une valeur pour éviter les codes morts et faire en sorte que le compilateur exécute exactement ce que l'on veut.
+      \subsection{Addition de deux vecteurs de valeurs flottantes C = A + B}
+        Voici la fonction d'addition de deux vecteurs.
+        \begin{algorithm}
+        \begin{C}
+void add() {
+	freopen("error.log", "w", stderr);
+    for (int i = 0; i < N; i++) {
+        C1[i]=A1[i]+B1[i];
+        fprintf(stderr,"%f",C1[i]);
+    }
+    fclose(stderr);
+}
+        \end{C}
+        \caption[Algo en C]{: Addition de deux vecteurs\label{ag:algoc}}
+        \end{algorithm}
+        
+      \subsection{Multiplication de deux matrices C = A × B}
+        Voici la fonction qui fait la multiplication de deux matrices.
+        \begin{algorithm}
+        \begin{C}
+void multMatrice(){
+    freopen("error.log", "w", stderr);
+    for(int i=0; i< N; i++){
+        for (int j=0; j< M; j++){
+            for (int k=0; k< P; k++){
+                C[i][j] = C[i][j] + A[i][k] * B[k][j];
+            }
+            fprintf(stderr,"%f",C[i][j]);
+        }
+    }
+    fclose(stderr);
+}
+        \end{C}
+        \caption[Algo en C]{Retourne la valeur maximale du tableau tab.\label{ag:algoc}}
+        \end{algorithm}
+
+      \subsection{Multiplication d’un vecteur par un scalaire A = A × s}
+        Voici la fonction de multiplication d'un vecteur.
+        \begin{algorithm}
+        \begin{C}
+void mult_scalaire(){
+    freopen("error.log", "w", stderr);
+    for(int i=0;i<N;i++){
+        As[i]=As[i]*s;
+        fprintf(stderr,"%f",As[i]);
+    }
+    fclose(stderr);
+}
+        \end{C}
+        \caption[Algo en C]{Retourne la valeur maximale du tableau tab.\label{ag:algoc}}
+      \end{algorithm}
+    
+    \section{Mesures des performances et profilage d’un programme}
+    \subsection{Temps d'exécution}
+      Pour évaluer le temps d'exécution de notre programme, nous utiliserons la commande \textit{time}.
+      Pour plus d'efficacité nous exécuterons un makefile pour effectuer nos commandes.
+      
+    \subsubsection{fonction addition}
+      Pour la fonction addition on obtient ces résultats (exécuté avec la ligne de commande \textit{make test\_add}, voir résultat dans \textit{resultat/res\_test\_add.txt}) :
+     
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        Statique & 0,548s & 0,400s & 0,148s \\
+        \hline
+        Dynamique & 0,454s & 0,281s & 0,173s \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre programme statique et dynamique (Exécution 1)}
+    \label{tab:graph_characteristics_1}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        Statique & 0,562s & 0,426s & 0,136s \\
+        \hline
+        Dynamique & 0,441s & 0,297s & 0,144s \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre programme statique et dynamique (Exécution 2)}
+    \label{tab:graph_characteristics_2}
+\end{table}
+  
+  On voit une légère différence entre les données statiques et celles allouées dynamiquement avec malloc.
+  \begin{itemize}
+        \item le temps real représente le temps total effectué (en seconde).
+    \end{itemize}
+    \begin{itemize}
+        \item le temps user représente le temps CPU utilisateur (exécution des instructions du programme)
+    \end{itemize}
+    \begin{itemize}
+        \item le temps sys représente le temps CPU système (appel système, opération entrées/sorties ...)
+    \end{itemize}\textit{}
+    On a pour la première exécution, avec données statiques, un temps total de 0,548s secondes. Le temps utilisateur représente ici environ 73\% du temps total ((0,400/0,548)*100=72.9). Le temps système quant à lui représente environ 27\%.
+    62\% environ pour le temps utilisateur avec données allouées dynamiquement.
+    \newline
+  \indent On remarque également que pour chaque exécution, on a des résultats différents et pour une raison simple : il y'a d'autres processus qui s'exécutent en même temps que notre programme, ce qui explique ces différences. Par exemple pour la deuxième exécution, le temps utilisateur de la version statique représente 75\% du temps total, soit 2 points de différence
+ \subsubsection{fonction multiplication matrice}
+  Pour la fonction multiplication on obtient ces résultats (exécuté avec la ligne de commande \textit{make test\_mult}, voir résultat dans \textit{resultat/res\_test\_mult.txt}):
+
+      \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        Statique & 18,018s & 17,749s & 0,240s \\
+        \hline
+        Dynamique & 33,561s & 33,334s & 0,204s \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre programme statique et dynamique (Exécution 1)}
+    \label{tab:graph_characteristics_1}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        Statique & 17,303s & 17,007s & 0,192s \\
+        \hline
+        Dynamique & 28,881s & 28,570s & 0,232s \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre programme statique et dynamique (Exécution 2)}
+    \label{tab:graph_characteristics_2}
+\end{table}
+
+  Pour la version statique, on a un temps utilisateur qui représente 98\% du temps total contre 2\% pour le temps système. 
+  Ces résultats nous montrent que l'exécution de la fonction multiplication de matrices est très longue. On remarque également que le temps d'exécution est différent d'une exécution à une autre.
+\subsubsection{fonction scalaire}
+  Pour la fonction multiplication d'un vecteur par un scalaire on obtient ce résultat (exécuté avec la ligne de commande \textit{make test\_scal}):
+  
+      \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        Statique &0,471s & 0,327s & 0,144s \\
+        \hline
+        Dynamique & 0,425s & 0,284s & 0,140s \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre programme statique et dynamique (Exécution 1)}
+    \label{tab:graph_characteristics_1}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        Statique & 0,480s & 0,344s & 0,136s \\
+        \hline
+        Dynamique & 0,418s & 0,287s & 0,131s \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre programme statique et dynamique (Exécution 2)}
+    \label{tab:graph_characteristics_2}
+\end{table}
+
+      Pour la première exécution version statique, le temps utilisateur représente 69\%, le temps système 31\% du temps total.
+      Grâce à ces benchmarks on sait que notre programme va prendre beaucoup de temps à faire la multiplication de matrices. On sait donc quelle partie du code optimiser.
+    \subsection{Calcul des métriques de performances}
+    Voici ci-dessous les formules des métriques suivantes : CPI, IPC et GFLOPS
+\[
+\text{CPI(P,I,A)} = \frac{\text{TempsExecution}(P, I, A)\times \text{FrequenceHorloge}(A)}{\text{NombreInstructions}(P, I, A)} 
+\]
+\[
+\text{IPC(P,I,A)} = \frac{1}{\text{CPI(P,I,A)}}
+\]
+\[
+\text{GFLOP} = \frac{\text{Nombre total d'opérations flottantes}}{\text{Temps d'exécution (en secondes)} \times 10^9}
+\]
+\subsection{Profilage d'un programme}
+Pour cet exercice, nous allons profiler avec l'outil \textit{gprof}, le fichier «dynamique.c» avec l'option \textit{-pg} pour permettre à \textit{gprof} de récupérer les données qu'il souhaite. Voici la suite de commande que l'on exécute dans le terminal (\textit{make gprof}, résultat dans \textit{resultat/res.txt}): 
+ \begin{lstlisting}
+gcc -pg -O0 dynamique.c -o dynamique_gprof
+./dynamique_gprof
+gprof -b dynamique\_gprof gmon.out > resultat/res.txt
+  \end{lstlisting} 
+  Voici ci-dessous un extrait de \textit{res.txt} :
+  \begin{lstlisting}
+time   seconds   seconds    calls   s/call   s/call  name    
+ 98.33     23.68    23.68        1    23.68    23.68  multMatrice
+  1.66     24.08     0.40        1     0.40     0.40  initialiserMatrices
+  0.00     24.08     0.00        1     0.00     0.00  add
+  0.00     24.08     0.00        1     0.00     0.00  mult_scalaire
+
+  granularity: each sample hit covers 2 byte(s) for 0.04% of 24.08 seconds
+  \end{lstlisting} 
+%«»
+En regardant la colonne «calls», on remarque que 4 fonctions ont été exécuté, celle de la colonne «name» classé dans l'ordre décroissant du temps d'exécution. Ce qui veut dire que «multMatrice» met 23.68s sur 24.08s pour s'exécuter soit 98,33\% du temps.
+Les fonctions «add» et «mult\_scalaire» quant à elles, sont à 0 car imperceptible par l'outil. Leur temps d'exécution est très faible.
+\clearpage
+    \part{Optimisations de code}
+    \section{Optimisations de code avec le compilateur gcc et icx}
+Pour cet exercice, nous allons exécuter un script (ici makefile) pour effectuer nos calculs efficacement, l'objectif étant de faire une comparaison entre les 4 options d'optimisation (-O0, -O1, -O2, -O3, -Os) et les compilateurs gcc et icx. Les résultats obtenus sont redirigés dans des fichiers disponibles dans le dossier \textit{resultat/}.
+\subsection{res\_time\_statique.txt et res\_time\_dynamique.txt}
+\label{sec:mkl}
+%Pour les fichiers res\_time\_statique et res\_time\_tp1 : 
+Ces deux fichiers se présentent comme suit : en premier, les 4 exécutions, pour les 4 options d'optimisation différentes, avec le compilateur gcc puis 4 exécutions avec le compilateur icx et enfin une exécution avec l'option \textit{-mkl} d'icx. Les 3 fonctions sont exécutées ensemble.
+\subsubsection{res\_time\_statique.txt}
+Voici un exemple des résultats obtenus décrit dans res\_time\_statique.txt:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \diagbox{compilateur}{Temps total} & -O0 & -O1 & -O2 & -O3 & -Os & -mkl\\
+        \hline
+        gcc & 18,981s & 6,953s & 6,346s & 6,407s & 6,430s & \diagbox{}{} \\
+        \hline
+        icx & 14,873s & 6,800s &  3,627s & 3,515s & 6,043s & 3,417s\\
+        \hline
+        taux accélération gcc & 1 & 2,73 & 2.99 & 2,96 & 2,95 & \diagbox{}{} \\
+        \hline
+        taux accélération icx & 1 & 2,19 & 4,1 & 4,23 & 2,46 & 4,35 \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version statique}
+\end{table}
+
+\subsubsection{res\_time\_dynamique.txt}
+Voici un exemple des résultats obtenus décrit dans res\_time\_dynamique.txt:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \diagbox{compilateur}{Temps total} & -O0 & -O1 & -O2 & -O3 & -Os & -mkl\\
+        \hline
+        gcc & 28,914s & 14,813s & 8,845s & 8,925s & 11,941s & \diagbox{}{}\\
+        \hline
+        icx & 27,305s & 9,197s &  9,924s & 10,012s & 9,614s & 9,330s\\
+        \hline
+        taux accélération gcc & 1 & 1,95 & 3,27 & 3,24 & 2,42 & \diagbox{}{} \\
+        \hline
+        taux accélération icx & 1 & 2,97 & 2,75 & 2,72 & 2,84 & 2,93\\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version dynamique}
+\end{table}
+
+\subsection{res\_time\_add.txt, res\_time\_mult.txt et res\_time\_scal.txt}
+Les fichiers se présentent comme suit : dans un premier temps, Les exécution statiques avec, les 4 exécutions, pour les 4 options d'optimisation différentes, avec le compilateur gcc puis 4 exécutions avec le compilateur icx. Dans un second temps les exécutions dynamiques dans le même ordre que les statiques.
+
+\subsubsection{res\_time\_add.txt}
+Voici un exemple des résultats obtenus décrit dans «res\_time\_add.txt»:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \diagbox{compilateur}{Temps total} & -O0 & -O1 & -O2 & -O3 & -Os\\
+        \hline
+        gcc & 0,553s & 0,397s & 0,272s & 0,301s & 0,332s \\
+        \hline
+        icx & 0,486s & 0,330s &  0,267s & 0,264s & 0,342s\\
+        \hline
+        taux accélération gcc & 1 & 1,4 & 2,034 & 1,840 & 1,667 \\
+        \hline
+        taux accélération icx & 1 & 1,473 & 1,818 & 1,838 & 1,419\\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version statique}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \diagbox{compilateur}{Temps total} & -O0 & -O1 & -O2 & -O3 & -Os\\
+        \hline
+        gcc & 0,467s & 0,406s & 0,361s & 0,235s & 0,358s \\
+        \hline
+        icx & 0,479s & 0,412s &  0,220s & 0,223s & 0,357s\\
+        \hline
+        taux accélération gcc & 1 & 1,150 & 1,294 & 1,987 & 1,305 \\
+        \hline
+        taux accélération icx & 1 & 1,163 & 2,173 & 2,148 & 1,344\\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version dynamique}
+\end{table}
+
+\subsubsection{res\_time\_mult.txt}
+Voici un exemple des résultats obtenus décrit dans «res\_time\_mult.txt»:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \diagbox{compilateur}{Temps total} & -O0 & -O1 & -O2 & -O3 & -Os\\
+        \hline
+        gcc & 24,695s & 7,677s & 7,206s & 8,028s & 7,575s \\
+        \hline
+        icx & 19,513s & 6,747s & 4,068s  & 4,207s & 7,302s\\
+        \hline
+        taux accélération gcc & 1 & 3,22 & 3,42 & 3,08 & 3,26 \\
+        \hline
+        taux accélération icx & 1 & 2,89 & 4,79 & 4,64 & 2,67\\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version statique}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \diagbox{compilateur}{Temps total} & -O0 & -O1 & -O2 & -O3 & -Os\\
+        \hline
+        gcc & 37,611s & 21,004s & 10,452s & 10,214s & 13,864s \\
+        \hline
+        icx & 34,989s & 10,889s & 10,294s  & 10,831s & 10,744s \\
+        \hline
+        taux accélération gcc & 1 & 1,79 & 3,60 & 3,68 & 2,71 \\
+        \hline
+        taux accélération icx & 1 & 3,22 & 3,40 & 3,23 & 3,26\\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version dynamique}
+\end{table}
+
+\subsubsection{res\_time\_scal.txt}
+Voici un exemple des résultats obtenus décrit dans «res\_time\_scal.txt»:%«»
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \diagbox{compilateur}{Temps total} & -O0 & -O1 & -O2 & -O3 & -Os\\
+        \hline
+        gcc & 0,515s & 0,411s &0,270s  & 0,299s & 0,328s \\
+        \hline
+        icx & 0,485s & 0,339s & 0,254s  & 0,298s & 0,324s\\
+        \hline
+        taux accélération gcc & 1 & 1,25 & 1,91 & 1,72 & 1,57\\
+        \hline
+        taux accélération icx & 1 & 1,43 & 1,91 & 1,63 & 1,50\\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version statique}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \diagbox{compilateur}{Temps total} & -O0 & -O1 & -O2 & -O3 & -Os\\
+        \hline
+        gcc & 0,469s & 0,380s & 0,377s & 0,247s & 0,413s \\
+        \hline
+        icx & 0,476s & 0,363s & 0,357s  & 0,239s & 0,369s \\
+        \hline
+        taux accélération gcc & 1 & 1,24 & 1,24 & 1,90 & 1,14\\
+        \hline
+        taux accélération icx & 1 & 1,31 & 1,33 & 1,99 & 1,29 \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version dynamique}
+\end{table}
+        
+  %\pageblanche
+  %\bibliographystyle{apalike-fr}
+  %\bibliography{biblio}
+\clearpage
+\part{Man gcc}
+Pour cette partie nous utilisons le script «option.sh» pour exéctuer la commande
+\begin{lstlisting}
+    gcc -Q --help=optimizers -O<N> | grep enable | awk '{print $1}'
+    avec N ={1, 2, 3, s}
+\end{lstlisting}
+pour les options O1, O2, O3 et Os. La liste pour chaque option ce trouve dans le dossier \textit{resultat/}. Les fichiers sont sous la forme «liste\_option\_ON.txt».
+
+\part{Librairie MKL d'Intel}
+Dans cette section nous allons comparer les résultats obtenus avec le compilateur icx avec les options -O3 et -mkl. Ces résultats sont déjà présenté dans \hyperref[sec:mkl]{la section 3.1}. On remarque que les temps totaux avec l'options -mkl sont meilleurs que ceux avec l'option -O3.
+
+\part{Compteurs matériels de performances}
+Dans cette section nous allons analyser les événements matériels provoqués par le processus statique\_gcc\_O0.
+Avec la commande perf suivante :
+\begin{lstlisting}
+perf stat -e cycles,cache-misses,instructions,L1-dcache-load-misses,L1-icache-load-misses,branch-instructions,branch-loads,node-loads ./statique_gcc_O0
+\end{lstlisting}
+on obtient le résultat illustré sur la photo «perfStat.png» disponible dans le dossier \textit{resultat/} où l'on voit le détail des événements matériels enregistrés.
+
+Avec la commande %«»
+\begin{lstlisting}
+perf record -e cycles,cache-misses,instructions,L1-dcache-load-misses,L1-icache-load-misses,branch-instructions,branch-loads,node-loads ./statique_gcc_O0
+\end{lstlisting}
+on obtient un fichier «perf.data\_statique\_O0» qui grâce à la commande 
+\begin{lstlisting}
+perf report perf.data\_statique\_O0
+\end{lstlisting}
+permet de visualisé également des événements matériels. On peut voir le résultat de cette action sur la photo «perfReport.png» disponible dans le dossier \textit{resultat/}.
+\end{document}
