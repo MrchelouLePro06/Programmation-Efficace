@@ -1,71 +1,142 @@
-bash -c 'time ./tp2_O2_unrolling'
+--------------début exécution----------------
+tp2_O2_unrolling
 
-real    0m4,692s
-user    0m4,684s
-sys     0m0,008s
+real	0m3,769s
+user	0m3,765s
+sys	0m0,004s
+tp2_O2_unrolling_Q1
 
-bash -c 'time ./tp2_O2_unrolling_Q1'
+real	0m3,683s
+user	0m3,679s
+sys	0m0,004s
+tp2_O2_fl
 
-real    0m4,520s
-user    0m4,512s
-sys     0m0,008s
+real	0m3,789s
+user	0m3,785s
+sys	0m0,004s
+--------------fin exécution----------------
+--------------début exécution----------------
+tp2_O2_unrolling
 
-bash -c 'time ./tp2_O2_fl'
+real	0m3,730s
+user	0m3,718s
+sys	0m0,008s
+tp2_O2_unrolling_Q1
 
-real    0m4,651s
-user    0m4,639s
-sys     0m0,012s
+real	0m3,617s
+user	0m3,609s
+sys	0m0,008s
+tp2_O2_fl
 
-//---------------------2eme exec-------------------------
-bash -c 'time ./tp2_O2_unrolling'
+real	0m3,684s
+user	0m3,680s
+sys	0m0,004s
+--------------fin exécution----------------
+--------------début exécution----------------
+tp2_O2_unrolling
 
-real    0m3,815s
-user    0m3,815s
-sys     0m0,000s
+real	0m3,789s
+user	0m3,781s
+sys	0m0,008s
+tp2_O2_unrolling_Q1
 
-bash -c 'time ./tp2_O2_unrolling_Q1'
+real	0m3,772s
+user	0m3,764s
+sys	0m0,008s
+tp2_O2_fl
 
-real    0m3,758s
-user    0m3,750s
-sys     0m0,008s
+real	0m3,608s
+user	0m3,607s
+sys	0m0,000s
+--------------fin exécution----------------
+--------------début exécution----------------
+tp2_O2_unrolling
 
-bash -c 'time ./tp2_O2_fl'
+real	0m4,439s
+user	0m4,435s
+sys	0m0,004s
+tp2_O2_unrolling_Q1
 
-real    0m3,729s
-user    0m3,724s
-sys     0m0,004s
-//---------------------3eme exec-------------------------
-bash -c 'time ./tp2_O2_unrolling'
+real	0m4,137s
+user	0m4,129s
+sys	0m0,008s
+tp2_O2_fl
 
-real    0m3,851s
-user    0m3,818s
-sys     0m0,025s
+real	0m4,063s
+user	0m4,056s
+sys	0m0,008s
+--------------fin exécution----------------
 
-bash -c 'time ./tp2_O2_unrolling_Q1'
+--------------début exécution----------------
+tp2_O2_unrolling
 
-real    0m3,750s
-user    0m3,745s
-sys     0m0,004s
+real	0m4,218s
+user	0m4,213s
+sys	0m0,004s
+tp2_O2_unrolling_Q1
 
-bash -c 'time ./tp2_O2_fl'
+real	0m3,985s
+user	0m3,976s
+sys	0m0,008s
+tp2_O2_fl
 
-real    0m3,627s
-user    0m3,627s
-sys     0m0,000s
+real	0m4,049s
+user	0m4,041s
+sys	0m0,008s
+--------------fin exécution----------------
 
-//---------------------4eme exec-------------------------
-bash -c 'time ./tp2_O2_unrolling'
+--------------début exécution----------------
+tp2_O2_unrolling
 
-real    0m3,888s
-user    0m3,880s
-sys     0m0,008s
-bash -c 'time ./tp2_O2_unrolling_Q1'
+real	0m4,203s
+user	0m4,171s
+sys	0m0,032s
+tp2_O2_unrolling_Q1
 
-real    0m3,622s
-user    0m3,587s
-sys     0m0,004s
-bash -c 'time ./tp2_O2_fl'
+real	0m4,191s
+user	0m4,131s
+sys	0m0,060s
+tp2_O2_fl
 
-real    0m3,696s
-user    0m3,679s
-sys     0m0,016s
+real	0m4,048s
+user	0m4,038s
+sys	0m0,008s
+--------------fin exécution----------------
+
+--------------début exécution----------------
+avec P, N, M = 2500
+tp2_O2_unrolling
+
+real	0m10,565s
+user	0m10,549s
+sys	0m0,008s
+tp2_O2_unrolling_Q1
+
+real	0m8,999s
+user	0m8,987s
+sys	0m0,012s
+tp2_O2_fl
+
+real	0m8,993s
+user	0m8,985s
+sys	0m0,008s
+--------------fin exécution----------------
+
+--------------début exécution----------------
+tp2_O2_unrolling avec N, M et P = 3000
+
+real	0m17,246s
+user	0m17,229s
+sys	0m0,016s
+tp2_O2_unrolling_Q1
+
+real	0m15,748s
+user	0m15,740s
+sys	0m0,008s
+tp2_O2_fl
+
+real	0m15,760s
+user	0m15,752s
+sys	0m0,008s
+--------------fin exécution----------------
+

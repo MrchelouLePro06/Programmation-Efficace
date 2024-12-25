@@ -3,11 +3,15 @@ dynamique_*
 statique_*
 error.log
 gmon.out
-
+a.out
+a-dynamique.gcda
 #from tp2 :
 tp2_O*
 #from tp3 :
-
+tmp
+tmp2
+matrix*
+.R*
 #from tp4 :
 
 cpu_bound_*

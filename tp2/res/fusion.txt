@@ -1,77 +1,141 @@
-bash -c 'time ./tp2_O2_fusion'
-2.000000 2.000000 1.000000
+--------------début exécution----------------
+tp2_O0_fusion
+4001.500000 2.000000 1.000000
 
-real    0m2,638s
-user    0m2,618s
-sys     0m0,012s
-bash -c 'time ./tp2_O2_fusion_Q1'
-2.000000 2.000000 1.000000
+real	0m38,203s
+user	0m38,198s
+sys	0m0,004s
+tp2_O0_fusion_Q1
+4001.500000 2.000000 1.000000
 
-real    0m2,211s
-user    0m2,196s
-sys     0m0,008s
-bash -c 'time ./tp2_O2_fusion_Q2'
-2.000000 2.000000 1.000000
+real	0m40,240s
+user	0m40,158s
+sys	0m0,080s
+tp2_O0_fusion_Q2
+4001.500000 2.000000 1.000000
 
-real    0m4,770s
-user    0m4,744s
-sys     0m0,004s
+real	0m36,484s
+user	0m36,475s
+sys	0m0,008s
+--------------fin exécution----------------
+--------------début exécution----------------
+tp2_O0_fusion
+4001.500000 2.000000 1.000000
 
----------------------------------2eme------------------------
-bash -c 'time ./tp2_O2_fusion'
-2.000000 2.000000 1.000000
+real	0m38,554s
+user	0m38,534s
+sys	0m0,000s
+tp2_O0_fusion_Q1
+4001.500000 2.000000 1.000000
 
-real    0m1,228s
-user    0m1,219s
-sys     0m0,008s
-bash -c 'time ./tp2_O2_fusion_Q1'
-2.000000 2.000000 1.000000
+real	0m40,064s
+user	0m40,055s
+sys	0m0,012s
+tp2_O0_fusion_Q2
+4001.500000 2.000000 1.000000
 
-real    0m1,600s
-user    0m1,596s
-sys     0m0,004s
-bash -c 'time ./tp2_O2_fusion_Q2'
-2.000000 2.000000 1.000000
+real	0m36,756s
+user	0m36,750s
+sys	0m0,008s
+--------------fin exécution----------------
+--------------début exécution----------------
+tp2_O0_fusion
+4001.500000 2.000000 1.000000
 
-real    0m5,203s
-user    0m5,199s
-sys     0m0,004s
-------------------------------3-----------------
-bash -c 'time ./tp2_O2_fusion'
-2.000000 2.000000 1.000000
+real	0m38,404s
+user	0m38,395s
+sys	0m0,012s
+tp2_O0_fusion_Q1
+4001.500000 2.000000 1.000000
 
-real    0m1,901s
-user    0m1,889s
-sys     0m0,012s
-bash -c 'time ./tp2_O2_fusion_Q1'
-2.000000 2.000000 1.000000
+real	0m39,991s
+user	0m39,994s
+sys	0m0,000s
+tp2_O0_fusion_Q2
+4001.500000 2.000000 1.000000
 
-real    0m1,570s
-user    0m1,562s
-sys     0m0,008s
-bash -c 'time ./tp2_O2_fusion_Q2'
-2.000000 2.000000 1.000000
+real	0m36,478s
+user	0m36,479s
+sys	0m0,000s
+--------------fin exécution----------------
+--------------début exécution----------------
+tp2_O0_fusion
+4001.500000 2.000000 1.000000
 
-real    0m5,130s
-user    0m5,130s
-sys     0m0,000s
+real	0m38,995s
+user	0m38,966s
+sys	0m0,012s
+tp2_O0_fusion_Q1
+4001.500000 2.000000 1.000000
 
--------------------------------sans O2-----------------------
-bash -c 'time ./tp2_O0_fusion'
-3001.500000 2.000000 1.000000
+real	0m40,665s
+user	0m40,653s
+sys	0m0,012s
+tp2_O0_fusion_Q2
+4001.500000 2.000000 1.000000
 
-real    0m18,132s
-user    0m18,127s
-sys     0m0,004s
-bash -c 'time ./tp2_O0_fusion_Q1'
-3001.500000 2.000000 1.000000
+real	0m36,758s
+user	0m36,739s
+sys	0m0,000s
+--------------fin exécution----------------
 
-real    0m18,333s
-user    0m18,276s
-sys     0m0,008s
-bash -c 'time ./tp2_O0_fusion_Q2'
-3001.500000 2.000000 1.000000
+--------------début exécution----------------
+tp2_O0_fusion
+4001.500000 2.000000 1.000000
 
-real    0m16,695s
-user    0m16,679s
-sys     0m0,004s
+real	0m38,802s
+user	0m38,780s
+sys	0m0,012s
+tp2_O0_fusion_Q1
+4001.500000 2.000000 1.000000
+
+real	0m40,892s
+user	0m40,446s
+sys	0m0,444s
+tp2_O0_fusion_Q2
+4001.500000 2.000000 1.000000
+
+real	0m36,958s
+user	0m36,934s
+sys	0m0,004s
+--------------fin exécution----------------
+
+--------------début exécution----------------
+tp2_O0_fusion
+4001.500000 2.000000 1.000000
+
+real	0m38,764s
+user	0m38,716s
+sys	0m0,004s
+tp2_O0_fusion_Q1
+4001.500000 2.000000 1.000000
+
+real	0m40,673s
+user	0m40,664s
+sys	0m0,008s
+tp2_O0_fusion_Q2
+4001.500000 2.000000 1.000000
+
+real	0m36,734s
+user	0m36,726s
+sys	0m0,008s
+--------------fin exécution----------------
+
+--------------début exécution----------------
+tp2_O0_fusion
+
+real	0m38,189s
+user	0m38,179s
+sys	0m0,008s
+tp2_O0_fusion_Q1
+
+real	0m39,223s
+user	0m39,218s
+sys	0m0,004s
+tp2_O0_fusion_Q2
+
+real	0m37,140s
+user	0m37,126s
+sys	0m0,012s
+--------------fin exécution----------------
+

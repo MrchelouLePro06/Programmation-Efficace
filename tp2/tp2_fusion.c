@@ -73,6 +73,6 @@ int main(){
     multMatrice();
     #endif
 
-    printf("%f %f %f\n", C[1000][1000],B[M-1][P-1],A[16][16]);
+    //printf("%f %f %f\n", C[1000][1000],B[M-1][P-1],A[16][16]);
 	return 0;
 }

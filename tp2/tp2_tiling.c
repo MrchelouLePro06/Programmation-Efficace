@@ -33,7 +33,7 @@ void initialiserMatrices(){
 int main(){
     int i0,j0,k0, i,j ,k;
 
-    #ifdef Q1
+    #ifdef ijk
     for (i0 = 0; i0 < N; i0 += BLOC)
         for (j0 = 0; j0 < M; j0 += BLOC)
             for (k0 = 0; k0 < P; k0 += BLOC)
@@ -51,6 +51,24 @@ int main(){
                         for (j = j0; j < min(j0 + BLOC, M); j++)
                             C[i][j] += A[i][k] * B[k][j];
 
+    #elif jik
+    for (i0 = 0; i0 < N; i0 += BLOC)
+        for (j0 = 0; j0 < M; j0 += BLOC)
+            for (k0 = 0; k0 < P; k0 += BLOC)
+                for (j = j0; j < min(j0 + BLOC, M); j++)
+                    for (i = i0; i < min(i0 + BLOC, N); i++)
+                        for (k = k0; k < min(k0 + BLOC, P); k++)
+                            C[i][j] += A[i][k] * B[k][j];
+
+    #elif jki
+    for (i0 = 0; i0 < N; i0 += BLOC)
+        for (j0 = 0; j0 < M; j0 += BLOC)
+            for (k0 = 0; k0 < P; k0 += BLOC)
+                for (j = j0; j < min(j0 + BLOC, M); j++)
+                    for (k = k0; k < min(k0 + BLOC, P); k++)
+                        for (i = i0; i < min(i0 + BLOC, N); i++)
+                            C[i][j] += A[i][k] * B[k][j];
+
     #elif kij
     for (i0 = 0; i0 < N; i0 += BLOC)
         for (k0 = 0; k0 < P; k0 += BLOC)
@@ -58,6 +76,15 @@ int main(){
                 for (i = i0; i < min(i0 + BLOC, N); i++)
                     for (k = k0; k < min(k0 + BLOC, P); k++)
                         for (j = j0; j < min(j0 + BLOC, M); j++)
+                            C[i][j] += A[i][k] * B[k][j];
+
+    #elif kji
+    for (i0 = 0; i0 < N; i0 += BLOC)
+        for (j0 = 0; j0 < M; j0 += BLOC)
+            for (k0 = 0; k0 < P; k0 += BLOC)
+                for (k = k0; k < min(k0 + BLOC, P); k++)
+                    for (j = j0; j < min(j0 + BLOC, M); j++)
+                        for (i = i0; i < min(i0 + BLOC, N); i++)
                             C[i][j] += A[i][k] * B[k][j];
     #else
     for (i=0; i< N; i++){

@@ -318,17 +318,18 @@ gprof:
 		@echo '--------------------------fin exécution--------------------------'
 
 fprofile:
-		gcc dynamique.c -fprofile-generate -o dynamique_fpg
-		./dynamique_fpg
+		@echo '--------------------------début exécution------------------------'>>resultat/res_fprofile.txt 2>&1
+		gcc dynamique.c -fprofile-generate
+		./a.out
 		gcc dynamique.c -fprofile-use
-		./a.out
-		rm a.out
-		
-		icx dynamique.c -fprofile-generate -o dynamique_fpg_icx
-		./dynamique_fpg_icx
-		icx dynamique.c -fprofile-use
-		./a.out
+		@echo "avec fprofile-generate et fprofile-use">>resultat/res_fprofile.txt 2>&1
+		bash -c 'time ./a.out'>>resultat/res_fprofile.txt 2>&1
 
+		gcc dynamique.c
+		./a.out
+		@echo "sans fprofile-generate et fprofile-use">>resultat/res_fprofile.txt 2>&1
+		bash -c 'time ./a.out'>>resultat/res_fprofile.txt 2>&1
+		@echo '--------------------------début exécution------------------------\n'>>resultat/res_fprofile.txt 2>&1
 clean :
 		rm dynamique_*
 		rm statique_*

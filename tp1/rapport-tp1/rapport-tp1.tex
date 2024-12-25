@@ -15,7 +15,7 @@
 \usepackage{diagbox}
 
 % Pour un rapport en français 
-\usepackage[francais]{babel} % Commenter pour un rapport en anglais
+\usepackage[français]{babel} % Commenter pour un rapport en anglais
 \renewcommand\bibsection{\section*{Bibliographie}} % Commenter pour un rapport en anglais
 
 % \englishTitlePage % Décommenter pour une page de titre en anglais
@@ -65,7 +65,7 @@
     Ce rapport a pour objectif de détailler les différents résultats obtenus lors de ce TP1 disponible ci-après : \url{https://lms.univ-cotedazur.fr/2024/pluginfile.php/228842/mod_resource/content/10/Eval-Perf.pdf}.
      \end{abstract}
     %\newcommand{\ppc}{programmation par contraintes\xspace}
-\subsection*{Architecture utilisé pour ce TP}
+\subsection*{Architecture utilisée pour ce TP}
      \noindent
     CPU name:	Intel(R) Core(TM) i7-10700F CPU @ 2.90GHz
     \newline
@@ -127,8 +127,8 @@
 %«»
 
   \part{Introduction}
-    L'objectif de ce TP est d'analyser les résultats d'exécution de deux fichiers C (disponibles dans l'archive fournisse) pour évaluer leur performances.
-    Ces fichier «.c», nommés «dynamique.c» et «statique.c» sont composés de plusieurs fonctions décrient dans le sujet du TP : 
+    L'objectif de ce TP est d'analyser les résultats d'exécution de deux fichiers C (disponibles dans l'archive fournisse) pour évaluer leurs performances.
+    Ces fichiers «.c», nommés «dynamique.c» et «statique.c» sont composés de plusieurs fonctions décrites dans le sujet du TP : 
     \begin{itemize}
         \item Addition de deux vecteurs de valeurs flottantes C = A + B
     \end{itemize}
@@ -138,20 +138,20 @@
     \begin{itemize}
         \item Multiplication d’un vecteur par un scalaire A = A × s
     \end{itemize}
-    Lors de ce tp nous utiliserons plusieurs outils comme la commande \textit{time} ou \textit{gprof} pour analyser notre code, ainsi que des options d'optimisations pour améliorer sa rapidité d'exécution.
+    Lors de ce TP nous utiliserons plusieurs outils comme la commande \textit{time} ou \textit{gprof} pour analyser notre code, ainsi que des options d'optimisation pour améliorer sa rapidité d'exécution.
     \newline
     \newline
-    \indent Ces analyses sont nécessaires pour optimiser les bouts de code qui prennent beaucoup de temps. Nous pouvons à la compilation, réduire ce temps de calcul grâce à des options d'optimisation que nous développerons plus tard (voir man gcc).     
+    \indent Ces analyses sont nécessaires pour optimiser les bouts de code qui prennent beaucoup de temps. Nous pouvons lors de la compilation réduire ce temps de calcul grâce à des options d'optimisation que nous développerons plus tard (voir man gcc).     
 
   %\pageblanche
   \clearpage
-  \part{Réalisation des benchmarks}
+  \part{Réalisation des benchmarks}\setcounter{section}{0}
   
     Dans cette partie nous réaliserons des benchmarks pour avoir un ordre d'idée du temps de calcul de notre programme.
-    Un benchmark est une série de tests réalisée pour analyser les performances d'un appareil informatique, composants (ex : carte graphique) ou dans notre cas d'un programme.
+    Un benchmark est une série de tests réalisés pour analyser les performances d'un appareil informatique, composants (ex : carte graphique) ou dans notre cas d'un programme.
     
     \section{Détail des fonctions}
-      Dans cette partie nous allons détaillé les fonctions décrient dans l'introduction. Nous utiliserons des matrices et vecteurs avec des données déclarées statiquement comme globales et des données allouées dynamiquement avec malloc. Les données sont des valeurs flottantes. Dans chaque fonctions, on print dans un fichier une valeur pour éviter les codes morts et faire en sorte que le compilateur exécute exactement ce que l'on veut.
+      Dans cette partie nous allons détailler les fonctions décrites dans l'introduction. Nous utiliserons des matrices et vecteurs avec des données déclarées statiquement comme globales et des données allouées dynamiquement avec \textit{malloc}. Les données sont des valeurs flottantes. Dans chaque fonction, on print dans un fichier une valeur pour éviter les codes morts et faire en sorte que le compilateur exécute exactement ce que l'on veut.
       \subsection{Addition de deux vecteurs de valeurs flottantes C = A + B}
         Voici la fonction d'addition de deux vecteurs.
         \begin{algorithm}
@@ -189,7 +189,7 @@ void multMatrice(){
         \end{algorithm}
 
       \subsection{Multiplication d’un vecteur par un scalaire A = A × s}
-        Voici la fonction de multiplication d'un vecteur.
+        Voici la fonction de multiplication d'un vecteur par un scalaire.
         \begin{algorithm}
         \begin{C}
 void mult_scalaire(){
@@ -204,13 +204,13 @@ void mult_scalaire(){
         \caption[Algo en C]{Retourne la valeur maximale du tableau tab.\label{ag:algoc}}
       \end{algorithm}
     
-    \section{Mesures des performances et profilage d’un programme}
+    \section{Mesure des performances et profilage d’un programme}
     \subsection{Temps d'exécution}
       Pour évaluer le temps d'exécution de notre programme, nous utiliserons la commande \textit{time}.
       Pour plus d'efficacité nous exécuterons un makefile pour effectuer nos commandes.
       
     \subsubsection{fonction addition}
-      Pour la fonction addition on obtient ces résultats (exécuté avec la ligne de commande \textit{make test\_add}, voir résultat dans \textit{resultat/res\_test\_add.txt}) :
+      Pour la fonction addition, on obtient ces résultats (exécutés avec la ligne de commande \textit{make test\_add}, voir résultat dans \textit{resultat/res\_test\_add.txt}) :
      
     \begin{table}[h!]
     \centering
@@ -224,7 +224,7 @@ void mult_scalaire(){
         \hline
     \end{tabular}
     \caption{Comparaison entre programme statique et dynamique (Exécution 1)}
-    \label{tab:graph_characteristics_1}
+    %\label{tab:graph_characteristics_1}
 \end{table}
 
 \begin{table}[h!]
@@ -239,10 +239,10 @@ void mult_scalaire(){
         \hline
     \end{tabular}
     \caption{Comparaison entre programme statique et dynamique (Exécution 2)}
-    \label{tab:graph_characteristics_2}
+    %\label{tab:graph_characteristics_2}
 \end{table}
   
-  On voit une légère différence entre les données statiques et celles allouées dynamiquement avec malloc.
+  On voit une légère différence entre les données statiques et celles allouées dynamiquement avec \textit{malloc}.
   \begin{itemize}
         \item le temps real représente le temps total effectué (en seconde).
     \end{itemize}
@@ -255,9 +255,9 @@ void mult_scalaire(){
     On a pour la première exécution, avec données statiques, un temps total de 0,548s secondes. Le temps utilisateur représente ici environ 73\% du temps total ((0,400/0,548)*100=72.9). Le temps système quant à lui représente environ 27\%.
     62\% environ pour le temps utilisateur avec données allouées dynamiquement.
     \newline
-  \indent On remarque également que pour chaque exécution, on a des résultats différents et pour une raison simple : il y'a d'autres processus qui s'exécutent en même temps que notre programme, ce qui explique ces différences. Par exemple pour la deuxième exécution, le temps utilisateur de la version statique représente 75\% du temps total, soit 2 points de différence
- \subsubsection{fonction multiplication matrice}
-  Pour la fonction multiplication on obtient ces résultats (exécuté avec la ligne de commande \textit{make test\_mult}, voir résultat dans \textit{resultat/res\_test\_mult.txt}):
+  \indent On remarque également que pour chaque exécution, on a des résultats différents et pour une raison simple : il y'a d'autres processus qui s'exécutent en même temps que notre programme, ce qui explique ces différences. Par exemple pour la deuxième exécution, le temps utilisateur de la version statique représente 75\% du temps total, soit 2 points de différence.
+ \subsubsection{Fonction multiplication matrice}
+  Pour la fonction multiplication on obtient ces résultats (exécutés avec la ligne de commande \textit{make test\_mult}, voir résultat dans \textit{resultat/res\_test\_mult.txt}):
 
       \begin{table}[h!]
     \centering
@@ -286,7 +286,7 @@ void mult_scalaire(){
         \hline
     \end{tabular}
     \caption{Comparaison entre programme statique et dynamique (Exécution 2)}
-    \label{tab:graph_characteristics_2}
+    %\label{tab:graph_characteristics_2}
 \end{table}
 
   Pour la version statique, on a un temps utilisateur qui représente 98\% du temps total contre 2\% pour le temps système. 
@@ -306,7 +306,7 @@ void mult_scalaire(){
         \hline
     \end{tabular}
     \caption{Comparaison entre programme statique et dynamique (Exécution 1)}
-    \label{tab:graph_characteristics_1}
+    %\label{tab:graph_characteristics_1}
 \end{table}
 
 \begin{table}[h!]
@@ -321,7 +321,7 @@ void mult_scalaire(){
         \hline
     \end{tabular}
     \caption{Comparaison entre programme statique et dynamique (Exécution 2)}
-    \label{tab:graph_characteristics_2}
+    %\label{tab:graph_characteristics_2}
 \end{table}
 
       Pour la première exécution version statique, le temps utilisateur représente 69\%, le temps système 31\% du temps total.
@@ -355,18 +355,18 @@ time   seconds   seconds    calls   s/call   s/call  name
   granularity: each sample hit covers 2 byte(s) for 0.04% of 24.08 seconds
   \end{lstlisting} 
 %«»
-En regardant la colonne «calls», on remarque que 4 fonctions ont été exécuté, celle de la colonne «name» classé dans l'ordre décroissant du temps d'exécution. Ce qui veut dire que «multMatrice» met 23.68s sur 24.08s pour s'exécuter soit 98,33\% du temps.
+En regardant la colonne «calls», on remarque que 4 fonctions ont été exécutées, celle de la colonne «name» classée dans l'ordre décroissant du temps d'exécution. Ce qui veut dire que «multMatrice» met 23.68s sur 24.08s pour s'exécuter soit 98,33\% du temps.
 Les fonctions «add» et «mult\_scalaire» quant à elles, sont à 0 car imperceptible par l'outil. Leur temps d'exécution est très faible.
 \clearpage
-    \part{Optimisations de code}
-    \section{Optimisations de code avec le compilateur gcc et icx}
+    \part{Optimisation de code}\setcounter{section}{0}
+    \section{Optimisation de code avec le compilateur gcc et icx}
 Pour cet exercice, nous allons exécuter un script (ici makefile) pour effectuer nos calculs efficacement, l'objectif étant de faire une comparaison entre les 4 options d'optimisation (-O0, -O1, -O2, -O3, -Os) et les compilateurs gcc et icx. Les résultats obtenus sont redirigés dans des fichiers disponibles dans le dossier \textit{resultat/}.
 \subsection{res\_time\_statique.txt et res\_time\_dynamique.txt}
 \label{sec:mkl}
 %Pour les fichiers res\_time\_statique et res\_time\_tp1 : 
 Ces deux fichiers se présentent comme suit : en premier, les 4 exécutions, pour les 4 options d'optimisation différentes, avec le compilateur gcc puis 4 exécutions avec le compilateur icx et enfin une exécution avec l'option \textit{-mkl} d'icx. Les 3 fonctions sont exécutées ensemble.
 \subsubsection{res\_time\_statique.txt}
-Voici un exemple des résultats obtenus décrit dans res\_time\_statique.txt:
+Voici un exemple des résultats obtenus décrits dans res\_time\_statique.txt:
 \begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -386,7 +386,7 @@ Voici un exemple des résultats obtenus décrit dans res\_time\_statique.txt:
 \end{table}
 
 \subsubsection{res\_time\_dynamique.txt}
-Voici un exemple des résultats obtenus décrit dans res\_time\_dynamique.txt:
+Voici un exemple des résultats obtenus décrits dans res\_time\_dynamique.txt:
 \begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -406,10 +406,10 @@ Voici un exemple des résultats obtenus décrit dans res\_time\_dynamique.txt:
 \end{table}
 
 \subsection{res\_time\_add.txt, res\_time\_mult.txt et res\_time\_scal.txt}
-Les fichiers se présentent comme suit : dans un premier temps, Les exécution statiques avec, les 4 exécutions, pour les 4 options d'optimisation différentes, avec le compilateur gcc puis 4 exécutions avec le compilateur icx. Dans un second temps les exécutions dynamiques dans le même ordre que les statiques.
+Les fichiers se présentent comme suit : dans un premier temps, les exécution statiques avec les 4 exécutions, pour les 4 options d'optimisation différentes, le compilateur gcc, puis 4 exécutions avec le compilateur icx. Dans un second temps, les exécutions dynamiques dans le même ordre que les statiques.
 
 \subsubsection{res\_time\_add.txt}
-Voici un exemple des résultats obtenus décrit dans «res\_time\_add.txt»:
+Voici un exemple des résultats obtenus décrits dans «res\_time\_add.txt»:
 \begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|}
@@ -521,21 +521,50 @@ Voici un exemple des résultats obtenus décrit dans «res\_time\_scal.txt»:%«
     \end{tabular}
     \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version dynamique}
 \end{table}
-        
-  %\pageblanche
-  %\bibliographystyle{apalike-fr}
-  %\bibliography{biblio}
+\subsection{Utilisation des options fprofile-generate et fprofile-use}
+En faisant la commande \textit{make fprofile}, on compile «dynamique.c» avec l'option \textit{-fprofile-generate} de gcc, on exécute le fichier généré «a.out» ce qui va générer un fichier en .gcda. On compile une nouvelle fois «dynamique.c» avec l'option \textit{-fprofile-use} puis on utilise la commande time pour le fichier généré «a.out».
+\newline
+On obtient le résultat suivant disponible dans \textit{resultat/res\_fprofile.txt}:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Version & Temps Total \\
+        \hline
+        sans option & 26,859s \\
+        \hline
+        avec option &  24,954s\\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre programme sans options et avec (Exécution 1)}
+    \label{tab:graph_characteristics_1}
+\end{table}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Version & Temps Total \\
+        \hline
+        sans options & 24,818s \\
+        \hline
+        avec options &  26,025s \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre programme sans options et avec (Exécution 2)}
+    \label{tab:graph_characteristics_1}
+\end{table}
+On a une amélioration du temps total avec les options \textit{-fprofile-generate} et \textit{-fprofile-use} pour la première exécution. Mais pour la seconde, l'utilisation de ces options n'améliore pas le code. D'une exécution à une autre, l'utilisation des options ne donne pas de bons résultats, ce n'est pas stable.
 \clearpage
 \part{Man gcc}
-Pour cette partie nous utilisons le script «option.sh» pour exéctuer la commande
+Pour cette partie nous utilisons le script «option.sh» pour exécuter la commande
 \begin{lstlisting}
     gcc -Q --help=optimizers -O<N> | grep enable | awk '{print $1}'
     avec N ={1, 2, 3, s}
 \end{lstlisting}
-pour les options O1, O2, O3 et Os. La liste pour chaque option ce trouve dans le dossier \textit{resultat/}. Les fichiers sont sous la forme «liste\_option\_ON.txt».
+pour les options O1, O2, O3 et Os. La liste pour chaque option se trouve dans le dossier \textit{resultat/}. Les fichiers sont sous la forme «liste\_option\_ON.txt».
 
 \part{Librairie MKL d'Intel}
-Dans cette section nous allons comparer les résultats obtenus avec le compilateur icx avec les options -O3 et -mkl. Ces résultats sont déjà présenté dans \hyperref[sec:mkl]{la section 3.1}. On remarque que les temps totaux avec l'options -mkl sont meilleurs que ceux avec l'option -O3.
+Dans cette section nous allons comparer les résultats obtenus avec le compilateur icx avec les options -O3 et -mkl. Ces résultats sont déjà présentés dans \hyperref[sec:mkl]{la section 3.1}. On remarque que les temps totaux avec l'option -mkl sont meilleurs que ceux avec l'option -O3.
 
 \part{Compteurs matériels de performances}
 Dans cette section nous allons analyser les événements matériels provoqués par le processus statique\_gcc\_O0.
@@ -543,15 +572,22 @@ Avec la commande perf suivante :
 \begin{lstlisting}
 perf stat -e cycles,cache-misses,instructions,L1-dcache-load-misses,L1-icache-load-misses,branch-instructions,branch-loads,node-loads ./statique_gcc_O0
 \end{lstlisting}
-on obtient le résultat illustré sur la photo «perfStat.png» disponible dans le dossier \textit{resultat/} où l'on voit le détail des événements matériels enregistrés.
+On obtient le résultat illustré sur la photo «perfStat.png» disponible dans le dossier \textit{resultat/} où l'on voit le détail des événements matériels enregistrés.
 
-Avec la commande %«»
+Avec la commande : %«»
 \begin{lstlisting}
 perf record -e cycles,cache-misses,instructions,L1-dcache-load-misses,L1-icache-load-misses,branch-instructions,branch-loads,node-loads ./statique_gcc_O0
 \end{lstlisting}
-on obtient un fichier «perf.data\_statique\_O0» qui grâce à la commande 
+on obtient un fichier «perf.data\_statique\_O0» qui grâce à la commande
 \begin{lstlisting}
 perf report perf.data\_statique\_O0
 \end{lstlisting}
-permet de visualisé également des événements matériels. On peut voir le résultat de cette action sur la photo «perfReport.png» disponible dans le dossier \textit{resultat/}.
+permet de visualiser également des événements matériels. On peut voir le résultat de cette action sur la photo «perfReport.png» disponible dans le dossier \textit{resultat/}.
+
+\clearpage
+\part{Conclusion}
+L'évaluation des performances d'un programme est nécessaire pour analyser son temps d'exécution. Nous avons vu au cours de ce TP que nous pouvions améliorer ces performances grâce à des options d'optimisation lors de la compilation de notre programme. L'utilisation d'outils de profilage comme \textit{gprof}, que nous avons utilisés précédemment, est aussi très importante pour analyser en profondeur notre programme. Il existe d'autres outils de profilage spécifiques à certaines architectures, comme \textit{vtune} de chez Intel. Enfin, nous avons également effectué une comparaison entre deux compilateurs pour voir lequel est le plus performant.
+\newline
+En somme, sans ces analyses, nous ne pouvons pas savoir si notre code est performant ou non.
+
 \end{document}

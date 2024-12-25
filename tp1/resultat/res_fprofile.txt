@@ -1,0 +1,52 @@
+--------------------------début exécution------------------------
+avec fprofile-generate et fprofile-use
+
+real	0m24,954s
+user	0m24,561s
+sys	0m0,160s
+sans fprofile-generate et fprofile-use
+
+real	0m26,859s
+user	0m26,590s
+sys	0m0,216s
+--------------------------début exécution------------------------
+
+--------------------------début exécution------------------------
+avec fprofile-generate et fprofile-use
+
+real	0m31,805s
+user	0m31,494s
+sys	0m0,256s
+sans fprofile-generate et fprofile-use
+
+real	0m30,427s
+user	0m30,106s
+sys	0m0,268s
+--------------------------début exécution------------------------
+
+--------------------------début exécution------------------------
+avec fprofile-generate et fprofile-use
+
+real	0m26,025s
+user	0m25,833s
+sys	0m0,180s
+sans fprofile-generate et fprofile-use
+
+real	0m24,818s
+user	0m24,525s
+sys	0m0,212s
+--------------------------début exécution------------------------
+
+--------------------------début exécution------------------------
+avec fprofile-generate et fprofile-use
+
+real	0m32,921s
+user	0m32,382s
+sys	0m0,301s
+sans fprofile-generate et fprofile-use
+
+real	0m30,919s
+user	0m30,625s
+sys	0m0,276s
+--------------------------début exécution------------------------
+

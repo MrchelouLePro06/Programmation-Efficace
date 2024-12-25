@@ -1,0 +1,406 @@
+\documentclass{rapport}
+\usepackage[utf8]{inputenc}
+
+\usepackage{pifont} % Pour les symboles appelés par la macro \ding
+\usepackage{url} % Comme son nom l'indique, pour les url...
+
+\usetikzlibrary{positioning} % Bibliothèque tikz pour positionner des nœuds relativement à d'autres
+
+\usepackage[colorlinks, citecolor=red!60!green, linkcolor=blue!60!green, urlcolor=magenta]{hyperref} % Pour que les liens soient cliquables. Les options permettent de mettre les liens en couleur.
+
+\usepackage{algorithm}
+\usepackage{algo}
+\usepackage{colorationSyntaxique}
+\usepackage{amsmath}
+\usepackage{diagbox}
+\usepackage{listings}
+\lstset{                  % Specify language
+    basicstyle=\ttfamily\small,     % Code font and size
+    keywordstyle=\color{blue},      % Color for keywords
+    commentstyle=\color{gray},      % Color for comments
+    stringstyle=\color{red},        % Color for strings
+    numbers=left,                   % Add line numbers
+    numberstyle=\tiny\color{gray},  % Style for line numbers
+    % frame=single,                   % Add a border around code
+    breaklines=true,                % Line wrapping
+    % backgroundcolor=\color{gray!10} % Light gray background
+}
+% Pour un rapport en français 
+\usepackage[french]{babel} % Commenter pour un rapport en anglais
+\renewcommand\bibsection{\section*{Bibliographie}} % Commenter pour un rapport en anglais
+
+% \englishTitlePage % Décommenter pour une page de titre en anglais
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{\thesection.\ #1}{}}
+\fancyfoot{}
+
+\fancyhead[LE]{\textsl{\leftmark}}
+\fancyhead[RE, LO]{\textbf{\thepage}}
+\fancyhead[RO]{\textsl{\rightmark}}
+
+\def\Latex{\LaTeX\xspace}
+\def\etc{\textit{etc.}\xspace}
+
+
+
+\title{Transformations de boucles}
+\author{Mehdi Mansour}
+\supervisor{Professeur Sid Touati}
+\date{Premier semestre de l'année 2024-2025}
+
+%\universityname{Université Côte d'Azur} % Nom de l'université.
+\type{TP2} % Type de document
+% \formation{Master Informatique} % Nom de la formation
+
+% Retrouver les autres options possibles dans le document rapport.pdf
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    Ce rapport a pour objectif de détailler les différents résultats obtenus lors de ce TP2 disponible ci-après : \url{https://lms.univ-cotedazur.fr/2024/pluginfile.php/228844/mod_resource/content/2/TransformationsBoucles.pdf}.
+     \end{abstract}
+    %\newcommand{\ppc}{programmation par contraintes\xspace}
+\subsection*{Architecture utilisée pour ce TP}
+     \noindent
+    CPU name:	Intel(R) Core(TM) i7-10700F CPU @ 2.90GHz
+    \newline
+    CPU type:	Intel Cometlake processor
+    \newline
+    CPU stepping:	5
+    \newline
+    \newline
+    \noindent
+    Hardware Thread Topology
+    \newline
+    \newline
+    Sockets:		1
+    \newline
+    Cores per socket:	8
+    \newline
+    Threads per core:	2
+    \newline
+    Socket 0:		( 0 8 1 9 2 10 3 11 4 12 5 13 6 14 7 15 )
+    \newline
+    \newline
+    NUMA domains:		1
+    \newline
+    Domain:			0
+    \newline
+    Processors:		( 0 8 1 9 2 10 3 11 4 12 5 13 6 14 7 15 )
+    \newline
+    Distances:		10
+    \newline
+    Free memory:		21746.9 MB
+    \newline
+    Total memory:		31991.4 MB
+    \newline
+
+\subsection*{Topologie du PC}
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \multicolumn{9}{|c|}{Topologie graphique} \\
+        \hline
+        Core & \enspace0\enspace\enspace8 &\enspace1\enspace\enspace9 &\enspace2\enspace\enspace10 &\enspace3\enspace\enspace11 &\enspace4\enspace\enspace12 &\enspace5\enspace\enspace13 &\enspace6\enspace\enspace14 &\enspace7\enspace\enspace15\\
+        \hline
+        Cache L1& \enspace32 kB &\enspace32 kB &\enspace32 kB &\enspace32 kB &\enspace32 kB&\enspace32 kB&\enspace32 kB&\enspace32 kB\\
+        \hline
+        Cache L2 & 256 kB & 256 kB & 256 kB & 256 kB & 256 kB& 256 kB& 256 kB& 256 kB\\
+        \hline
+        Cache L3 & \multicolumn{8}{|c|}{16 MB} \\
+        \hline
+    \end{tabular}
+    %\caption{Les différents niveaux de cache par cœur}
+    \label{tab:graph_characteristics}
+    \end{table}
+  
+  \clearpage
+  \tableofcontents
+
+  \clearpage
+%«»
+
+  \part{Introduction}
+    L'objectif de ce TP est d'analyser les résultats d'exécution de quatre fichiers C (disponibles dans l'archive fournie) pour évaluer leur performances.
+    Ces fichiers «.c», nommés «tp2\_unrolling.c», «tp2\_fusion.c», «tp2\_interchange.c» et «tp2\_tiling.c» sont composés de plusieurs fonctions. 
+    \newline
+    Chacun de ces fichiers utilise des techniques d'optimisation de code pour optimiser une fonction multiplication de matrices à valeurs flottantes avec matrices déclarées en statique : 
+    \label{algo:algo}
+    \begin{algorithm}
+        \begin{C}
+    for(int i=0; i< N; i++){
+        for (int j=0; j< M; j++){
+            for (int k=0; k< P; k++){
+                C[i][j] = C[i][j] + A[i][k] * B[k][j];
+            }
+        }
+    }
+        \end{C}
+        \caption[Algo en C]{: Multiplication de deux matrices C = A × B.}
+        \end{algorithm}
+    \newline
+    Lors de ce TP tous les codes sources seront compilés, avec au plus, l'option d'optimisation -O2, au-delà le compilateur risque d'effectuer des transformations de boucles qui perturberont nos résultats. Nous analyserons l'efficacité de ces techniques d'optimisation de code avec l'aide de la commande \textit{time}.
+
+  %\pageblanche
+  \clearpage
+  %--------------------------------------Part II-----------------------------------------------------------
+  \part{Déroulage de boucle (loop unrolling)}
+  
+    Dans cette partie nous réaliserons des benchmarks pour tester l'efficacité de la technique du déroulage de boucle pour avoir un ordre d'idée du temps de calcul de notre programme avec ou sans cette optimisation du code. Tous nos calculs seront faits avec le fichier «tp2\_unrolling.c», avec l'option d'optimisation -O2, grâce à la commande \textit{make unrolling}.
+    
+    \section{Déroulage de la boucle interne 7 fois}
+        L'objectif de cet exercice est de dérouler la boucle interne de notre \hyperref[algo:algo]{fonction} 7 fois (ici la boucle interne est k). Le déroulage de boucle n fois consiste à dupliquer le corps de boucle n-1 fois (ici n-1=7), on obtient donc n copies (ici n=8).
+        \newline
+        On obtient donc la boucle k suivante :
+    \begin{lstlisting}
+for (k; k< P; k+=8){
+        C[i][j] += A[i][k] * B[k][j];
+        C[i][j] += A[i][k+1] * B[k+1][j];
+        C[i][j] += A[i][k+2] * B[k+2][j];
+        C[i][j] += A[i][k+3] * B[k+3][j];
+        C[i][j] += A[i][k+4] * B[k+4][j];
+        C[i][j] += A[i][k+5] * B[k+5][j];
+        C[i][j] += A[i][k+6] * B[k+6][j];
+        C[i][j] += A[i][k+7] * B[k+7][j];
+    }
+    \end{lstlisting}
+    
+    \section{Benchmark déroulage de boucle}
+      Les benchmarks sont réalisés grâce à la commande \textit{make unrolling}, on obtient les résultats dans un fichier nommé «unrolling.txt» disponible dans le dossier \textit{res/}. En voici un extrait rangé dans un tableau :
+    \subsection{Code avec et sans déroulage de boucle}
+      \begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        sans déroulage & 3,769s & 3,765s & 0,004s \\
+        \hline
+        avec déroulage & 3,683s &3,679s  & 0,004s \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre avec déroulage de boucle et sans}
+    %\label{tab:graph_characteristics_1}
+\end{table}
+      On a un facteur d'accélération de 1,02, soit une légère amélioration.
+      \subsection{Déroulage de boucle avec option à la compilation}
+      
+      \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        sans déroulage & 3,769s & 3,765s & 0,004s \\
+        \hline
+        avec déroulage & 3,683s &3,679s  & 0,004s \\
+        \hline
+        -funroll-loops & 3,789s & 3,785s & 0,004s \\
+        \hline
+    \end{tabular}
+    \caption{Exécution 1}
+    %\label{tab:graph_characteristics_1}
+\end{table}
+Pour l'Exécution 1, l'option ne donne pas de bon résultat mais pour la suivante :\newline\newline
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        sans déroulage & 4,439s & 4,435s & 0,004s \\
+        \hline
+        avec déroulage & 4,137s & 4,129s & 0,008s \\
+        \hline
+        -funroll-loops & 4,063s & 4,056s & 0,008s \\
+        \hline
+    \end{tabular}
+    \caption{Exécution 2}
+    %\label{tab:graph_characteristics_1}
+\end{table}
+On a un facteur d'accélération de 1,1 avec l'option. Avec déroulage on a un facteur de 1,07. La différence ici est légère.
+
+%--------------------------------------Part III-----------------------------------------------------------
+\clearpage
+\part{Fusion de boucles (loop fusion)}\setcounter{section}{0}
+Dans cette partie nous réaliserons des benchmarks pour tester l'efficacité de la technique de fusion de boucles.
+Cette technique consiste à fusionner plusieurs boucles, qui parcourent les mêmes plages d'itération, en une. Tous nos calculs seront faits avec le fichier «tp2\_fusion.c», sans option d'optimisation, grâce à la commande \textit{make fusion}.
+\section{Déroulage boucle externe 2 fois}
+
+A partir de la \hyperref[algo:algo]{fonction de multiplication de matrices} on obtient, ci-dessous, ce code en déroulant deux fois la boucle externe i : 
+\begin{lstlisting}
+for (i=0; i< N; i+=3){
+    for (j=0; j< M; j++){
+        for (k=0; k<P; k++){
+            C[i][j] = C[i][j] + A[i][k] * B[k][j];
+        }
+    }
+    if (i+1 < N){
+        for (j=0; j< M; j++){
+            for (k=0; k<P; k++){
+                C[i+1][j] = C[i+1][j] + A[i+1][k] * B[k][j];
+            }
+        }
+    }
+    if (i+2 < N) {
+        for (j=0; j< M; j++){
+            for (k=0; k<P; k++){
+                C[i+2][j] = C[i+2][j] + A[i+2][k] * B[k][j];
+            }
+        }
+    }
+}
+\end{lstlisting}
+
+\section{Fusion des boucles j}
+A partir du code précédent, on obtient ce code en fusionnant les trois boucles j en une: 
+\begin{lstlisting}
+for (i = 0; i < N; i += 3) {
+    for (j = 0; j < M; j++) {
+        for (k = 0; k < P; k++) {
+            C[i][j] = C[i][j] + A[i][k] * B[k][j];
+        }
+        if (i + 1 < N) {
+            for (k = 0; k < P; k++) {
+                C[i+1][j] = C[i+1][j] + A[i+1][k] * B[k][j];
+            }
+        }
+        if (i + 2 < N) {
+            for (k = 0; k < P; k++) {
+                C[i+2][j] = C[i+2][j] + A[i+2][k] * B[k][j];
+            }
+        }
+    }
+}
+\end{lstlisting}
+\section{Benchmark fusion de boucle}
+Les benchmarks sont réalisés grâce à la commande \textit{make fusion}, on obtient les résultats dans un fichier nommé «fusion.txt» disponible dans le dossier \textit{res/}. En voici un extrait rangé dans un tableau :
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total & Temps Utilisateur & Temps Système \\
+        \hline
+        sans déroulage & 38,203 & 38,198 & 0,004s \\
+        \hline
+        avec déroulage & 40,240 & 40,158 & 0,080s \\
+        \hline
+        avec fusion & 36,484 & 36,475 & 0,008s \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison du temps total entre trois versions de codes différentes}
+    %\label{tab:graph_characteristics_1}
+\end{table}
+On remarque que l'exécution du code avec fusion est la plus rapide des trois. On remarque aussi que le code avec déroulage de boucle est plus long que le code sans technique d'optimisation, sûrement parce que c'est la boucle externe qui est déroulée.
+%----------------------------------part IV---------------------------------------------
+\clearpage
+\part{Permutation de boucles (loop interchange)}\setcounter{section}{0}
+Dans cette partie nous réaliserons des benchmarks pour tester l'efficacité de la technique de permutation de boucles.
+Cette technique consiste à permuter deux boucles entre elles. Dans notre cas on peut faire 3! permutations soit 6 permutations toutes correctes. Tous nos calculs seront faits avec le fichier «tp2\_interchange.c», avec option d'optimisation -O2, grâce à la commande \textit{make interchange}.
+
+\section{Le meilleur ordre}
+L'ordre (i,k,j) est à priori l'ordre qui apporterait les meilleurs performances. Cet ordre permet de lire les matrices A[i][k], C[i][j] et B[k][j] plus rapidement car la mémoire est mieux utilisée, on a moins d'aller-retour vers la mémoire.
+
+\section{Benchmark permutation de boucles}
+Les benchmarks sont réalisés grâce à la commande \textit{make interchange}, on obtient les résultats dans un fichier nommé «interchange.txt» disponible dans le dossier \textit{res/}. En voici un extrait rangé dans un tableau :
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Version & Temps Total & facteur d'accélération \\
+        \hline
+        ijk & 3,767s & \diagbox{}{} \\
+        \hline
+        ikj & 1,910s & 1,97 \\
+        \hline
+        kij & 2,059s & 1,83 \\
+        \hline
+        kji & 5,078s & 0,74 \\
+        \hline
+        jik & 11,957s & 0,32 \\
+        \hline
+        jki & 18,544s & 0,20 \\
+        \hline
+        -floop-interchange & 0,010s & 377 \\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre les différentes permutations}
+    %\label{tab:graph_characteristics_1}
+\end{table}
+
+Comme dit précédemment, l'ordre (i,k,j) est le meilleur en terme de performance avec un facteur d'accélération de 1,97. On remarque également que certaines permutations n'améliorent pas le temps total mais au contraire l'augmentent. C'est le cas de (k,j,i), (j,i,k) et (j, k, i). On remarque surtout que l'option \textit{-floop-interchange} est beaucoup plus performantes que n'importe quelle permutation, avec un facteur d'accélération de 377, ce qui est conséquent. 
+%----------------------------------part V---------------------------------------------
+\clearpage
+\part{Tuilage ou blocage de boucle (loop tiling, loop blocking)}\setcounter{section}{0}
+Dans cette partie nous réaliserons des benchmarks pour tester l'efficacité de la technique de tuilage de boucles.
+Cette technique consiste à transformer le code pour que la boucle la plus interne puisse faire des calculs sur un ensemble réduit de données. Tous nos calculs seront fait avec le fichier «tp2\_tiling.c», avec option d'optimisation -O2, grâce à la commande \textit{make tiling}.
+
+\section{Pseudo-code}
+Voici un exemple de code utilisant cette technique : \newline
+\begin{lstlisting}
+for (i0 = 0; i0 < N; i0 += B)
+    for (j0 = 0; j0 < M; j0 += B)
+        for (k0 = 0; k0 < P; k0 += B)
+            for (i = i0; i < min(i0 + B, N); i++)
+                for (j = j0; j < min(j0 + B, M); j++)
+                    for (k = k0; k < min(k0 + B, P); k++)
+                        C[i][j] += A[i][k] * B[k][j];
+\end{lstlisting}
+Où B est le bloc. On le calcul grâce à la formule suivante : 
+\[
+3 \times B^2 \times \text{sizeof(float)} \leq C
+\]
+avec C le capacité du cache de données en octets, sizeof(float) = 4 octets. Comme on veut B on va faire le calcul suivant :
+\[
+B \leq sqrt(\frac{C}{12})
+\]
+Dans notre cas :
+\begin{itemize}
+    \item B= 52 pour le cache L1
+    \item B= 147 pour le cache L2
+    \item B= 1182 pour le cache L3
+\end{itemize}
+
+\section{Benchmark tuilage de boucle} 
+Dans cet exercice nous allons également utiliser les permutations de boucles pour améliorer les performances de notre code. Les benchmarks sont réalisés grâce à la commande \textit{make tiling}, on obtient les résultats dans un fichier nommé «tiling.txt» disponible dans le dossier \textit{res/}. En voici un extrait rangé dans un tableau :
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Version & Temps Total L1 & Temps Total L2 & Temps Total L3 \\
+        \hline
+        sans tuilage & 1,188s & 1,179s & 1,168s\\
+        \hline
+        ijk & 3,046s & 3,968s & 4,559s \\
+        \hline
+        ikj & 2,652s & 2,731s &2,421s \\
+        \hline
+        kij & 2,397s & 2,627s & 2,517s\\
+        \hline
+        kji & 3,529s & 4,293s & 4,711s\\
+        \hline
+        jik & 2,285s & 3,047s & 5,699s\\
+        \hline
+        jki & 2,599s & 2,982s & 5,418s\\
+        \hline
+        -floop-block & 4,623s & 4,989s & 4,756s\\
+        \hline
+        -floop-block et -floop-interchange & 5,050s & 4,806s & 5,026s\\
+        \hline
+    \end{tabular}
+    \caption{Comparaison entre les différentes permutations et options}
+    %\label{tab:graph_characteristics_1}
+\end{table}
+On remarque qu'avec tuilage de boucle c'est plus long mais c'est sûrement parce que le jeu de données est trop faible pour être efficace. On remarque aussi qu'un tuilage de boucle source est plus efficace que l'option -floop-block dédiée pour ça. On remarque qu'en général les temps les plus élevés sont de ceux avec un bloc de niveau L3.
+
+\clearpage
+\part{Conclusion}
+Ces techniques d'optimisation de code sont utiles pour améliorer les performances générales d'un code. Certaines, dans le cadre de ce TP sont plus efficace que d'autres, c'est notamment le cas de la permutation et de la fusion de boucle. Dans notre cas, notre code est petit, avec un jeu de données faible, cela peut donc expliquer les résultats peu concluants pour les techniques de tuilage de boucles (temps plus long que sans tuilage) ou encore le déroulage de boucle (amélioration minime du temps de calcul).
+\newline
+Ces techniques peuvent, combinées entre elles, améliorer les performances de nos codes. Il faut pour cela étudier en amont notre code, réaliser plusieurs benchmark sur plusieurs versions du code (si on le peut en terme de temps et de coût financier).
+\end{document}
