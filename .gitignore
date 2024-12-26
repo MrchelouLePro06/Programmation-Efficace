@@ -10,10 +10,9 @@ tp2_O*
 #from tp3 :
 tmp
 tmp2
-tp3/benchmark/matrix-*
+matrix-*
 .R*
 #from tp4 :
-
 cpu_bound_*
 memory_*
 rw_*
