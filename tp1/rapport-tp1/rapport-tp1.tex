@@ -165,7 +165,7 @@ void add() {
     fclose(stderr);
 }
         \end{C}
-        \caption[Algo en C]{: Addition de deux vecteurs\label{ag:algoc}}
+        \caption[Algo en C]{: Addition de deux vecteurs}
         \end{algorithm}
         
       \subsection{Multiplication de deux matrices C = A × B}
@@ -185,7 +185,7 @@ void multMatrice(){
     fclose(stderr);
 }
         \end{C}
-        \caption[Algo en C]{Retourne la valeur maximale du tableau tab.\label{ag:algoc}}
+        \caption[Algo en C]{Retourne la valeur maximale du tableau tab.}
         \end{algorithm}
 
       \subsection{Multiplication d’un vecteur par un scalaire A = A × s}
@@ -201,7 +201,7 @@ void mult_scalaire(){
     fclose(stderr);
 }
         \end{C}
-        \caption[Algo en C]{Retourne la valeur maximale du tableau tab.\label{ag:algoc}}
+        \caption[Algo en C]{Retourne la valeur maximale du tableau tab.}
       \end{algorithm}
     
     \section{Mesure des performances et profilage d’un programme}
@@ -271,7 +271,7 @@ void mult_scalaire(){
         \hline
     \end{tabular}
     \caption{Comparaison entre programme statique et dynamique (Exécution 1)}
-    \label{tab:graph_characteristics_1}
+    %\label{tab:graph_characteristics_1}
 \end{table}
 
 \begin{table}[h!]
@@ -385,6 +385,8 @@ Voici un exemple des résultats obtenus décrits dans res\_time\_statique.txt:
     \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version statique}
 \end{table}
 
+\textit{icx} est plus performant que \textit{gcc} pour toutes les options
+
 \subsubsection{res\_time\_dynamique.txt}
 Voici un exemple des résultats obtenus décrits dans res\_time\_dynamique.txt:
 \begin{table}[h!]
@@ -404,6 +406,8 @@ Voici un exemple des résultats obtenus décrits dans res\_time\_dynamique.txt:
     \end{tabular}
     \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version dynamique}
 \end{table}
+
+\textit{icx} est plus performant que \textit{gcc} pour toutes les options sauf les options O2 et O3.
 
 \subsection{res\_time\_add.txt, res\_time\_mult.txt et res\_time\_scal.txt}
 Les fichiers se présentent comme suit : dans un premier temps, les exécution statiques avec les 4 exécutions, pour les 4 options d'optimisation différentes, le compilateur gcc, puis 4 exécutions avec le compilateur icx. Dans un second temps, les exécutions dynamiques dans le même ordre que les statiques.
@@ -446,6 +450,8 @@ Voici un exemple des résultats obtenus décrits dans «res\_time\_add.txt»:
     \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version dynamique}
 \end{table}
 
+\textit{icx} est plus performant que \textit{gcc} pour toutes les options sauf l'option Os pour la version statique. Pour la version dynamique \textit{icx} est plus performant que \textit{gcc} pour les option O2, O3 et Os.
+
 \subsubsection{res\_time\_mult.txt}
 Voici un exemple des résultats obtenus décrit dans «res\_time\_mult.txt»:
 \begin{table}[H]
@@ -484,6 +490,8 @@ Voici un exemple des résultats obtenus décrit dans «res\_time\_mult.txt»:
     \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version dynamique}
 \end{table}
 
+\textit{icx} est plus performant que \textit{gcc} pour toutes les options pour la version statique. Même chose pour dynamique sauf pour l'option O3.
+
 \subsubsection{res\_time\_scal.txt}
 Voici un exemple des résultats obtenus décrit dans «res\_time\_scal.txt»:%«»
     \begin{table}[H]
@@ -521,6 +529,9 @@ Voici un exemple des résultats obtenus décrit dans «res\_time\_scal.txt»:%«
     \end{tabular}
     \caption{Comparaison entre gcc et icx pour différentes options d'optimisation, version dynamique}
 \end{table}
+
+\textit{icx} est plus performant que \textit{gcc} pour toutes les options pour la version statique. Même chose pour dynamique sauf pour l'option O0.
+
 \subsection{Utilisation des options fprofile-generate et fprofile-use}
 En faisant la commande \textit{make fprofile}, on compile «dynamique.c» avec l'option \textit{-fprofile-generate} de gcc, on exécute le fichier généré «a.out» ce qui va générer un fichier en .gcda. On compile une nouvelle fois «dynamique.c» avec l'option \textit{-fprofile-use} puis on utilise la commande time pour le fichier généré «a.out».
 \newline
@@ -537,7 +548,7 @@ On obtient le résultat suivant disponible dans \textit{resultat/res\_fprofile.t
         \hline
     \end{tabular}
     \caption{Comparaison entre programme sans options et avec (Exécution 1)}
-    \label{tab:graph_characteristics_1}
+    %\label{tab:graph_characteristics_1}
 \end{table}
 \begin{table}[h!]
     \centering
@@ -551,8 +562,9 @@ On obtient le résultat suivant disponible dans \textit{resultat/res\_fprofile.t
         \hline
     \end{tabular}
     \caption{Comparaison entre programme sans options et avec (Exécution 2)}
-    \label{tab:graph_characteristics_1}
+    %\label{tab:graph_characteristics_1}
 \end{table}
+\newline
 On a une amélioration du temps total avec les options \textit{-fprofile-generate} et \textit{-fprofile-use} pour la première exécution. Mais pour la seconde, l'utilisation de ces options n'améliore pas le code. D'une exécution à une autre, l'utilisation des options ne donne pas de bons résultats, ce n'est pas stable.
 \clearpage
 \part{Man gcc}

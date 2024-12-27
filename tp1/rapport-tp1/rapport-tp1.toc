@@ -17,12 +17,12 @@
 \contentsline {subsection}{\numberline {1.1}res\_time\_statique.txt et res\_time\_dynamique.txt}{8}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}res\_time\_statique.txt}{8}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}res\_time\_dynamique.txt}{8}{subsubsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.2}res\_time\_add.txt, res\_time\_mult.txt et res\_time\_scal.txt}{8}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}res\_time\_add.txt, res\_time\_mult.txt et res\_time\_scal.txt}{9}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}res\_time\_add.txt}{9}{subsubsection.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2}res\_time\_mult.txt}{9}{subsubsection.1.2.2}%
 \contentsline {subsubsection}{\numberline {1.2.3}res\_time\_scal.txt}{10}{subsubsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.3}Utilisation des options fprofile-generate et fprofile-use}{10}{subsection.1.3}%
-\contentsline {part}{IV\hspace {1em}Man gcc}{11}{part.4}%
-\contentsline {part}{V\hspace {1em}Librairie MKL d'Intel}{11}{part.5}%
-\contentsline {part}{VI\hspace {1em}Compteurs matériels de performances}{11}{part.6}%
-\contentsline {part}{VII\hspace {1em}Conclusion}{12}{part.7}%
+\contentsline {part}{IV\hspace {1em}Man gcc}{12}{part.4}%
+\contentsline {part}{V\hspace {1em}Librairie MKL d'Intel}{12}{part.5}%
+\contentsline {part}{VI\hspace {1em}Compteurs matériels de performances}{12}{part.6}%
+\contentsline {part}{VII\hspace {1em}Conclusion}{13}{part.7}%
