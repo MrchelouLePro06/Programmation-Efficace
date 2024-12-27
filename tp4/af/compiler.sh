@@ -1,5 +1,4 @@
 #!/bin/bash
-
 SOURCE="rw.c"
 COMPILATEUR=("gcc" "icx")
 OPTIMISATION=("O0" "O1" "O2" "O3" "Os")

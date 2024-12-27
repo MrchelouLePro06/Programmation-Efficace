@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm cpu_bound_*
+rm cpu_*

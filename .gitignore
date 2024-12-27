@@ -13,6 +13,6 @@ tmp2
 matrix-*
 .R*
 #from tp4 :
-cpu_bound_*
+cpu_*
 memory_*
 rw_*

@@ -1,0 +1,11 @@
+Compilateur,Optimisation,Average_Power,Total_Energy,Temps
+gcc,O0,0.40,20.61,60
+gcc,O1,0.42,21.87,60
+gcc,O2,0.41,21.55,60
+gcc,O3,0.41,21.56,60
+gcc,Os,0.44,21.89,60
+icx,O0,0.42,21.61,60
+icx,O1,0.43,21.70,60
+icx,O2,0.42,21.43,60
+icx,O3,0.43,21.85,60
+icx,Os,0.44,21.61,60

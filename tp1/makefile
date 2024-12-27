@@ -331,10 +331,10 @@ fprofile:
 		bash -c 'time ./a.out'>>resultat/res_fprofile.txt 2>&1
 		@echo '--------------------------début exécution------------------------\n'>>resultat/res_fprofile.txt 2>&1
 clean :
-		rm dynamique_*
-		rm statique_*
-		rm error.log
+		if [ -f dynamique_* ]; then rm dynamique_*; fi
+		if [ -f statique_* ]; then rm rm statique_*; fi
+		if [ -f error.log ]; then rm rm error.log; fi
 		if [ -f gmon.out ]; then rm gmon.out; fi
 		if [ -f *.gcda ]; then rm *.gcda; fi
 		if [ -f *.profraw ]; then rm *.profraw; fi
-		if [ -f *.out ]; then rm *.out; fi
+		if [ -f a.out ]; then rm a.out; fi

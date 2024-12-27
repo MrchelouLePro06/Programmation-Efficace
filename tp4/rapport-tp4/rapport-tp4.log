@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.12.23)  27 DEC 2024 20:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.12.23)  27 DEC 2024 20:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**rapport-tp3.tex
-(./rapport-tp3.tex
+**rapport-tp4.tex
+(./rapport-tp4.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16> (./rapport.cls
 Document Class: rapport 2021/11/22 v1.10 adding the titlepageneglish macro.
@@ -782,27 +782,27 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count328
 \l__pdf_internal_box=\box76
 )
-(./rapport-tp3.aux)
-\openout1 = `rapport-tp3.aux'.
+(./rapport-tp4.aux)
+\openout1 = `rapport-tp4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -868,11 +868,11 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 59.
+Package hyperref Info: Link coloring ON on input line 65.
 
-(./rapport-tp3.out) (./rapport-tp3.out)
+(./rapport-tp4.out) (./rapport-tp4.out)
 \@outlinefile=\write4
-\openout4 = `rapport-tp3.out'.
+\openout4 = `rapport-tp4.out'.
 
 \c@lstlisting=\count335
 *geometry* verbose mode - [ newgeometry ] result:
@@ -907,18 +907,18 @@ Package hyperref Info: Link coloring ON on input line 59.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./img//logo-uca.png, id=39, 264.0264pt x 209.1012pt>
+<./img//logo-uca.png, id=51, 264.0264pt x 209.1012pt>
 File: ./img//logo-uca.png Graphic file (type png)
 <use ./img//logo-uca.png>
-Package pdftex.def Info: ./img//logo-uca.png  used on input line 62.
+Package pdftex.def Info: ./img//logo-uca.png  used on input line 68.
 (pdftex.def)             Requested size: 89.81612pt x 71.13188pt.
-<./img//logo_haut.png, id=41, 659.81572pt x 446.76pt>
+<./img//logo_haut.png, id=53, 659.81572pt x 446.76pt>
 File: ./img//logo_haut.png Graphic file (type png)
 <use ./img//logo_haut.png>
-Package pdftex.def Info: ./img//logo_haut.png  used on input line 62.
+Package pdftex.def Info: ./img//logo_haut.png  used on input line 68.
 (pdftex.def)             Requested size: 105.04913pt x 71.13188pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
 
  []
 
@@ -930,22 +930,22 @@ g//logo_haut.png>] [2
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 68--101
+Underfull \hbox (badness 10000) in paragraph at lines 73--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--101
+Underfull \hbox (badness 10000) in paragraph at lines 73--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--101
+Underfull \hbox (badness 10000) in paragraph at lines 73--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--101
+Underfull \hbox (badness 10000) in paragraph at lines 73--106
 
  []
 
@@ -954,89 +954,210 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.122   \clearpage
-                   [1] (./rapport-tp3.toc)
+l.127   \clearpage
+                   [1] (./rapport-tp4.toc)
 \tf@toc=\write5
-\openout5 = `rapport-tp3.toc'.
+\openout5 = `rapport-tp4.toc'.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.125   \clearpage
+l.130   \clearpage
                    [2
 
-]
-Overfull \hbox (2.9982pt too wide) in paragraph at lines 129--132
-\OT1/cmr/m/n/10 Lors de ce TP, nous utiliserons la commande \OT1/cmr/m/it/10 ti
-me \OT1/cmr/m/n/10 pour conna^^^Ptre le temps r^^Seal de notre programme
- []
-
-[3
+] [3
 
 ]
-Overfull \hbox (9.27477pt too wide) in paragraph at lines 144--145
-\OT1/cmr/m/n/10 Ces exp^^Serimentations nous permettront de comparer l'impact d
-es diff^^Serentes strat^^Segies de placement
+Overfull \hbox (16.40952pt too wide) in paragraph at lines 147--148
+\OT1/cmr/m/n/9 d'installations puis tester l'outil. Dans notre cas, pour effect
+uer nos calculs il faut obligatoirement
  []
 
-<../benhmark/sansaffinité.png, id=85, 405.01312pt x 357.58594pt>
-File: ../benhmark/sansaffinité.png Graphic file (type png)
-<use ../benhmark/sansaffinité.png>
-Package pdftex.def Info: ../benhmark/sansaffinité.png  used on input line 164.
-
-(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
 [4
 
 ]
-<../benhmark/compact.png, id=91, 405.01312pt x 357.58594pt>
-File: ../benhmark/compact.png Graphic file (type png)
-<use ../benhmark/compact.png>
-Package pdftex.def Info: ../benhmark/compact.png  used on input line 177.
-(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
-<../benhmark/scatter.png, id=92, 405.01312pt x 357.58594pt>
-File: ../benhmark/scatter.png Graphic file (type png)
-<use ../benhmark/scatter.png>
-Package pdftex.def Info: ../benhmark/scatter.png  used on input line 190.
-(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
- [5 <../benhmark/sansaffinité.png (PNG copy)> <../benhmark/compact.png (PNG co
-py)>] [6 <../benhmark/scatter.png (PNG copy)>]
-Overfull \hbox (0.32918pt too wide) in paragraph at lines 198--208
-[]\OT1/cmr/m/n/10 Le placement de threads dit sans affinit^^Se : Ici c'est l'OS
- qui place les threads automatiquement.
+Overfull \hbox (1.10011pt too wide) in paragraph at lines 179--180
+\OT1/cmr/m/n/9 Nous allons calculer la consommation de ce programme pour diff^^
+Serentes option d'optimisation
  []
 
-[7
+<../cpu/Energie10s.png, id=123, 405.01312pt x 357.58594pt>
+File: ../cpu/Energie10s.png Graphic file (type png)
+<use ../cpu/Energie10s.png>
+Package pdftex.def Info: ../cpu/Energie10s.png  used on input line 189.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+<../cpu/Puissance10s.png, id=124, 405.01312pt x 357.58594pt>
+File: ../cpu/Puissance10s.png Graphic file (type png)
+<use ../cpu/Puissance10s.png>
+Package pdftex.def Info: ../cpu/Puissance10s.png  used on input line 196.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+[5
 
-] (./rapport-tp3.aux)
-Package rerunfilecheck Info: File `rapport-tp3.out' has not changed.
-(rerunfilecheck)             Checksum: 0EE488088A155757059E3DDF837ED6B2;1154.
- ) 
+ <../cpu/Energie10s.png (PNG copy)> <../cpu/Puissance10s.png (PNG copy)>]
+<../cpu/Energie60s.png, id=132, 405.01312pt x 357.58594pt>
+File: ../cpu/Energie60s.png Graphic file (type png)
+<use ../cpu/Energie60s.png>
+Package pdftex.def Info: ../cpu/Energie60s.png  used on input line 212.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+<../cpu/Puissance60s.png, id=133, 405.01312pt x 357.58594pt>
+File: ../cpu/Puissance60s.png Graphic file (type png)
+<use ../cpu/Puissance60s.png>
+Package pdftex.def Info: ../cpu/Puissance60s.png  used on input line 219.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+
+[6 <../cpu/Energie60s.png (PNG copy)> <../cpu/Puissance60s.png (PNG copy)>]
+Overfull \hbox (1.10011pt too wide) in paragraph at lines 228--229
+\OT1/cmr/m/n/9 Nous allons calculer la consommation de ce programme pour diff^^
+Serentes option d'optimisation
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{section.1}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.229 ...ion{Capture des données sur 10 secondes}
+                                                  
+<../memory/Energie10s.png, id=140, 405.01312pt x 357.58594pt>
+File: ../memory/Energie10s.png Graphic file (type png)
+<use ../memory/Energie10s.png>
+Package pdftex.def Info: ../memory/Energie10s.png  used on input line 238.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+<../memory/Puissance10s.png, id=141, 405.01312pt x 357.58594pt>
+File: ../memory/Puissance10s.png Graphic file (type png)
+<use ../memory/Puissance10s.png>
+Package pdftex.def Info: ../memory/Puissance10s.png  used on input line 245.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+ [7
+
+ <../memory/Energie10s.png (PNG copy)> <../memory/Puissance10s.png (PNG copy)>]
+
+pdfTeX warning (ext4): destination with the same identifier (name{section.2}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.252 ...ion{Capture des données sur 60 secondes}
+                                                  
+<../memory/Energie60s.png, id=148, 405.01312pt x 357.58594pt>
+File: ../memory/Energie60s.png Graphic file (type png)
+<use ../memory/Energie60s.png>
+Package pdftex.def Info: ../memory/Energie60s.png  used on input line 261.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+<../memory/Puissance60s.png, id=149, 405.01312pt x 357.58594pt>
+File: ../memory/Puissance60s.png Graphic file (type png)
+<use ../memory/Puissance60s.png>
+Package pdftex.def Info: ../memory/Puissance60s.png  used on input line 268.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+ [8 <../memory/Energie60s.png (PNG copy)> <../memory/Puissance60s.png (PNG copy
+)>]
+Overfull \hbox (1.10011pt too wide) in paragraph at lines 277--278
+\OT1/cmr/m/n/9 Nous allons calculer la consommation de ce programme pour diff^^
+Serentes option d'optimisation
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{section.1}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.278 ...ion{Capture des données sur 10 secondes}
+                                                  
+<../af/Energie10s.png, id=156, 405.01312pt x 357.58594pt>
+File: ../af/Energie10s.png Graphic file (type png)
+<use ../af/Energie10s.png>
+Package pdftex.def Info: ../af/Energie10s.png  used on input line 287.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+<../af/Puissance10s.png, id=157, 405.01312pt x 357.58594pt>
+File: ../af/Puissance10s.png Graphic file (type png)
+<use ../af/Puissance10s.png>
+Package pdftex.def Info: ../af/Puissance10s.png  used on input line 294.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+
+Overfull \hbox (21.19556pt too wide) in paragraph at lines 299--300
+[]\OT1/cmr/m/n/9 On remarque que les compilateurs se valent pour la consommatio
+n d'^^Senergie. La consommation
+ []
+
+[9
+
+ <../af/Energie10s.png (PNG copy)> <../af/Puissance10s.png (PNG copy)>]
+pdfTeX warning (ext4): destination with the same identifier (name{section.2}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.301 ...ion{Capture des données sur 60 secondes}
+                                                  
+<../af/Energie60s.png, id=165, 405.01312pt x 357.58594pt>
+File: ../af/Energie60s.png Graphic file (type png)
+<use ../af/Energie60s.png>
+Package pdftex.def Info: ../af/Energie60s.png  used on input line 310.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+<../af/Puissance60s.png, id=166, 405.01312pt x 357.58594pt>
+File: ../af/Puissance60s.png Graphic file (type png)
+<use ../af/Puissance60s.png>
+Package pdftex.def Info: ../af/Puissance60s.png  used on input line 317.
+(pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
+ [10 <../af/Energie60s.png (PNG copy)> <../af/Puissance60s.png (PNG copy)>]
+Overfull \hbox (12.22427pt too wide) in paragraph at lines 326--331
+\OT1/cmr/m/n/9 Dans le cadre de ce TP, nous avons ^^Setudi^^Se la consommation 
+d'^^Senergie ^^Selectrique des programmes.
+ []
+
+
+Overfull \hbox (10.93869pt too wide) in paragraph at lines 326--331
+\OT1/cmr/m/n/9 manuellement pour chaque programme. Dans notre cas, l'utilisatio
+n d'un script ^^Setait n^^Secessaire. 
+ []
+
+[11
+
+]
+
+! LaTeX Error: \begin{abstract} on input line 69 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.331 \end{document}
+                    
+? 
+(./rapport-tp4.aux)
+Package rerunfilecheck Info: File `rapport-tp4.out' has not changed.
+(rerunfilecheck)             Checksum: 7F7A8CF03CBDCD68F86AB87FE27E9371;2561.
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 69 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 24222 strings out of 477975
- 443672 string characters out of 5839280
- 1859330 words of memory out of 5000000
- 43905 multiletter control sequences out of 15000+600000
- 520426 words of font info for 59 fonts, out of 8000000 for 9000
+ 24568 strings out of 477975
+ 447461 string characters out of 5839280
+ 1899330 words of memory out of 5000000
+ 44217 multiletter control sequences out of 15000+600000
+ 520594 words of font info for 60 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 117i,12n,118p,521b,459s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/mehdi/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600
-pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti12.pfb>
-Output written on rapport-tp3.pdf (9 pages, 265966 bytes).
+ 117i,12n,118p,576b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/mehdi/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/e
+c/tcrm0900.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt9.pfb>
+Output written on rapport-tp4.pdf (13 pages, 463161 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 

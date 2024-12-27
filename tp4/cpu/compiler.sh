@@ -1,9 +1,9 @@
 #!/bin/bash
 
-SOURCE="cpu_bound.c"
+SOURCE="cpu.c"
 COMPILATEUR=("gcc" "icx")
 OPTIMISATION=("O0" "O1" "O2" "O3" "Os")
-OUTPUT="cpu_bound"
+OUTPUT="cpu"
 
 for comp in "${COMPILATEUR[@]}";
 do
