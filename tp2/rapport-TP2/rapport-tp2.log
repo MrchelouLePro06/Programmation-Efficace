@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.12.23)  25 DEC 2024 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.12.23)  3 JAN 2025 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -936,22 +936,7 @@ univ-[]cotedazur . fr / 2024 / pluginfile . php / 228844 / mod _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--100
+Underfull \hbox (badness 10000) in paragraph at lines 67--101
 
  []
 
@@ -960,7 +945,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.121   \clearpage
+l.124   \clearpage
                    [1] (./rapport-tp2.toc)
 \tf@toc=\write5
 \openout5 = `rapport-tp2.toc'.
@@ -970,7 +955,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.124   \clearpage
+l.127   \clearpage
                    [2
 
 ]
@@ -981,23 +966,23 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 1
-35.
+38.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 135.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 138.
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-35.
+38.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 135.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 138.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 143.
+put line 146.
  [3
 
 ]
@@ -1010,15 +995,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.208 P
+l.211 P
        our l'Exécution 1, l'option ne donne pas de bon résultat mais pour ...
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 208--224
+Underfull \hbox (badness 10000) in paragraph at lines 211--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--224
+Underfull \hbox (badness 10000) in paragraph at lines 211--227
 
  []
 
@@ -1027,25 +1012,25 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.228 \clearpage
+l.231 \clearpage
                 
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.228 \clearpage
+l.231 \clearpage
                 ]
 pdfTeX warning (ext4): destination with the same identifier (name{section.1}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.232 \section{Déroulage boucle externe 2 fois}
+l.235 \section{Déroulage boucle externe 2 fois}
                                                 
 pdfTeX warning (ext4): destination with the same identifier (name{section.2}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.259 \section{Fusion des boucles j}
+l.262 \section{Fusion des boucles j}
                                      [6
 
 ] [7
@@ -1053,19 +1038,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.300 \clearpage
+l.303 \clearpage
                 ]
 pdfTeX warning (ext4): destination with the same identifier (name{section.1}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.305 \section{Le meilleur ordre}
+l.308 \section{Le meilleur ordre}
                                  
 pdfTeX warning (ext4): destination with the same identifier (name{section.2}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.308 \section{Benchmark permutation de boucles}
+l.311 \section{Benchmark permutation de boucles}
                                                  [8
 
 
@@ -1073,15 +1058,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.337 \clearpage
+l.340 \clearpage
                 ]
 pdfTeX warning (ext4): destination with the same identifier (name{section.1}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.342 \section{Pseudo-code}
+l.345 \section{Pseudo-code}
                            
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
 
@@ -1090,7 +1075,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{section.2}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.368 \section{Benchmark tuilage de boucle}
+l.371 \section{Benchmark tuilage de boucle}
                                             [9
 
 ] [10
@@ -1098,7 +1083,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.401 \clearpage
+l.404 \clearpage
                 ] [11
 
 ] (./rapport-tp2.aux)
@@ -1106,9 +1091,9 @@ Package rerunfilecheck Info: File `rapport-tp2.out' has not changed.
 (rerunfilecheck)             Checksum: D9ADC301007D82485C030C8558E56398;3641.
  ) 
 Here is how much of TeX's memory you used:
- 24727 strings out of 477975
- 448526 string characters out of 5839280
- 2062330 words of memory out of 5000000
+ 24728 strings out of 477975
+ 448536 string characters out of 5839280
+ 2061330 words of memory out of 5000000
  44315 multiletter control sequences out of 15000+600000
  522010 words of font info for 65 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -1133,10 +1118,10 @@ texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive
 dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt9.pfb>
-Output written on rapport-tp2.pdf (13 pages, 318310 bytes).
+Output written on rapport-tp2.pdf (13 pages, 318575 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 100 named destinations out of 1000 (max. 500000)
+ 360 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 101 named destinations out of 1000 (max. 500000)
  159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

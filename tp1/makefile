@@ -244,11 +244,11 @@ time_scal :
 		@echo "Option d'optimisation -O1">>resultat/res_time_scal.txt 2>&1
 		bash -c 'time ./statique_icx_O1_SCAL'>>resultat/res_time_scal.txt 2>&1
 		@echo "Option d'optimisation -O2">>resultat/res_time_scal.txt 2>&1
-		bash -c 'time ./statique_gcc_O2_SCAL'>>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./statique_icx_O2_SCAL'>>resultat/res_time_scal.txt 2>&1
 		@echo "Option d'optimisation -O3">>resultat/res_time_scal.txt 2>&1
-		bash -c 'time ./statique_gcc_O3_SCAL'>>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./statique_icx_O3_SCAL'>>resultat/res_time_scal.txt 2>&1
 		@echo "Option d'optimisation -Os">>resultat/res_time_scal.txt 2>&1
-		bash -c 'time ./statique_gcc_Os_SCAL'>>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./statique_icx_Os_SCAL'>>resultat/res_time_scal.txt 2>&1
 
 		@echo '-----------------dynamique-------------------'>>resultat/res_time_scal.txt 2>&1
 
@@ -272,11 +272,11 @@ time_scal :
 		@echo "Option d'optimisation -O1">>resultat/res_time_scal.txt 2>&1
 		bash -c 'time ./dynamique_icx_O1_SCAL'>>resultat/res_time_scal.txt 2>&1
 		@echo "Option d'optimisation -O2">>resultat/res_time_scal.txt 2>&1
-		bash -c 'time ./dynamique_gcc_O2_SCAL'>>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./dynamique_icx_O2_SCAL'>>resultat/res_time_scal.txt 2>&1
 		@echo "Option d'optimisation -O3">>resultat/res_time_scal.txt 2>&1
-		bash -c 'time ./dynamique_gcc_O3_SCAL'>>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./dynamique_icx_O3_SCAL'>>resultat/res_time_scal.txt 2>&1
 		@echo "Option d'optimisation -Os">>resultat/res_time_scal.txt 2>&1
-		bash -c 'time ./dynamique_gcc_Os_SCAL'>>resultat/res_time_scal.txt 2>&1
+		bash -c 'time ./dynamique_icx_Os_SCAL'>>resultat/res_time_scal.txt 2>&1
 
 		@echo '--------------------------fin exécution--------------------------\n\n'>>resultat/res_time_scal.txt 2>&1
 		
@@ -331,6 +331,8 @@ fprofile:
 		bash -c 'time ./a.out'>>resultat/res_fprofile.txt 2>&1
 		@echo '--------------------------début exécution------------------------\n'>>resultat/res_fprofile.txt 2>&1
 clean :
+		rm dynamique_*
+		rm statique_*
 		if [ -f dynamique_* ]; then rm dynamique_*; fi
 		if [ -f statique_* ]; then rm rm statique_*; fi
 		if [ -f error.log ]; then rm rm error.log; fi

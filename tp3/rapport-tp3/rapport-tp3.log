@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.12.23)  27 DEC 2024 20:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.12.23)  3 JAN 2025 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -930,22 +930,7 @@ g//logo_haut.png>] [2
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 68--101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--101
+Underfull \hbox (badness 10000) in paragraph at lines 68--102
 
  []
 
@@ -954,7 +939,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.122   \clearpage
+l.125   \clearpage
                    [1] (./rapport-tp3.toc)
 \tf@toc=\write5
 \openout5 = `rapport-tp3.toc'.
@@ -964,47 +949,68 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.125   \clearpage
+l.128   \clearpage
                    [2
 
 ]
-Overfull \hbox (2.9982pt too wide) in paragraph at lines 129--132
+Overfull \hbox (2.44263pt too wide) in paragraph at lines 132--135
 \OT1/cmr/m/n/10 Lors de ce TP, nous utiliserons la commande \OT1/cmr/m/it/10 ti
-me \OT1/cmr/m/n/10 pour conna^^^Ptre le temps r^^Seal de notre programme
+me \OT1/cmr/m/n/10 pour conna^^^Ptre le temps r^^Seel de notre programme
  []
 
 [3
 
 ]
-Overfull \hbox (9.27477pt too wide) in paragraph at lines 144--145
+Overfull \hbox (9.27477pt too wide) in paragraph at lines 147--148
 \OT1/cmr/m/n/10 Ces exp^^Serimentations nous permettront de comparer l'impact d
 es diff^^Serentes strat^^Segies de placement
  []
 
-<../benhmark/sansaffinité.png, id=85, 405.01312pt x 357.58594pt>
+
+Overfull \hbox (2.16618pt too wide) in paragraph at lines 149--153
+\OT1/cmr/m/n/10 compilateurs, on ex^^Secute les trois scripts du dossier \OT1/c
+mr/m/it/10 bench/ \OT1/cmr/m/n/10 pour obtenir, pour chaque compilateur,
+ []
+
+<../benhmark/sansaffinité.png, id=86, 405.01312pt x 357.58594pt>
 File: ../benhmark/sansaffinité.png Graphic file (type png)
 <use ../benhmark/sansaffinité.png>
-Package pdftex.def Info: ../benhmark/sansaffinité.png  used on input line 164.
+Package pdftex.def Info: ../benhmark/sansaffinité.png  used on input line 167.
 
 (pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
 [4
 
 ]
-<../benhmark/compact.png, id=91, 405.01312pt x 357.58594pt>
+<../benhmark/compact.png, id=92, 405.01312pt x 357.58594pt>
 File: ../benhmark/compact.png Graphic file (type png)
 <use ../benhmark/compact.png>
-Package pdftex.def Info: ../benhmark/compact.png  used on input line 177.
+Package pdftex.def Info: ../benhmark/compact.png  used on input line 180.
 (pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
-<../benhmark/scatter.png, id=92, 405.01312pt x 357.58594pt>
+<../benhmark/scatter.png, id=93, 405.01312pt x 357.58594pt>
 File: ../benhmark/scatter.png Graphic file (type png)
 <use ../benhmark/scatter.png>
-Package pdftex.def Info: ../benhmark/scatter.png  used on input line 190.
+Package pdftex.def Info: ../benhmark/scatter.png  used on input line 193.
 (pdftex.def)             Requested size: 209.12683pt x 184.6417pt.
  [5 <../benhmark/sansaffinité.png (PNG copy)> <../benhmark/compact.png (PNG co
 py)>] [6 <../benhmark/scatter.png (PNG copy)>]
-Overfull \hbox (0.32918pt too wide) in paragraph at lines 198--208
+Overfull \hbox (0.32918pt too wide) in paragraph at lines 201--211
 []\OT1/cmr/m/n/10 Le placement de threads dit sans affinit^^Se : Ici c'est l'OS
  qui place les threads automatiquement.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--211
+
  []
 
 [7
@@ -1014,29 +1020,30 @@ Package rerunfilecheck Info: File `rapport-tp3.out' has not changed.
 (rerunfilecheck)             Checksum: 0EE488088A155757059E3DDF837ED6B2;1154.
  ) 
 Here is how much of TeX's memory you used:
- 24222 strings out of 477975
- 443672 string characters out of 5839280
- 1859330 words of memory out of 5000000
- 43905 multiletter control sequences out of 15000+600000
- 520426 words of font info for 59 fonts, out of 8000000 for 9000
+ 24225 strings out of 477975
+ 443706 string characters out of 5839280
+ 1860330 words of memory out of 5000000
+ 43906 multiletter control sequences out of 15000+600000
+ 520785 words of font info for 60 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  117i,12n,118p,521b,459s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/mehdi/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600
 pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti12.pfb>
-Output written on rapport-tp3.pdf (9 pages, 265966 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
+12.pfb>
+Output written on rapport-tp3.pdf (9 pages, 275609 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
  102 words of extra memory for PDF output out of 10000 (max. 10000000)
 

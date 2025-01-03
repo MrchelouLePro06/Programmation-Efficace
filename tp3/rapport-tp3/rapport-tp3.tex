@@ -66,38 +66,41 @@
     %\newcommand{\ppc}{programmation par contraintes\xspace}
 \subsection*{Architecture utilisée pour ce TP}
      \noindent
-    CPU name:	Intel(R) Core(TM) i7-10700F CPU @ 2.90GHz
-    \newline
-    CPU type:	Intel Cometlake processor
-    \newline
-    CPU stepping:	5
-    \newline
-    \newline
-    \noindent
-    Hardware Thread Topology
-    \newline
-    \newline
-    Sockets:		1
-    \newline
-    Cores per socket:	8
-    \newline
-    Threads per core:	2
-    \newline
-    Socket 0:		( 0 8 1 9 2 10 3 11 4 12 5 13 6 14 7 15 )
-    \newline
-    \newline
-    NUMA domains:		1
-    \newline
-    Domain:			0
-    \newline
-    Processors:		( 0 8 1 9 2 10 3 11 4 12 5 13 6 14 7 15 )
-    \newline
-    Distances:		10
-    \newline
-    Free memory:		21746.9 MB
-    \newline
-    Total memory:		31991.4 MB
-    \newline
+     Architecture : x86\_64
+     \newline
+      \noindent
+     nom CPU :	Intel(R) Core(TM) i7-10700F CPU @ 2.90GHz
+     \newline
+     Type de CPU :	Intel Cometlake processor
+     \newline
+     CPU stepping:	5
+     \newline
+     Hyperthreading activé
+     \newline
+     Sockets:		1
+     \newline
+     Cœurs par socket:	8
+     \newline
+     Threads par cœurs:	2
+     \newline
+     Socket 0:		( 0 8 1 9 2 10 3 11 4 12 5 13 6 14 7 15 )
+     \newline
+     \newline
+     NUMA :
+     \newline \indent
+         Nœud(s) NUMA : 1
+          \newline \indent
+         Nœud NUMA 0 de processeur(s) : 0-15
+     \newline
+     Processeurs:		( 0 8 1 9 2 10 3 11 4 12 5 13 6 14 7 15 )
+     \newline
+     Distances:		10
+     \newline
+     RAM disponible:		21746.9 MB
+     \newline
+     RAM Total :		31991.4 MB
+ \subsection*{Environnement logiciel}
+ Version et distribution Linux : Debian 12
 
 \subsection*{Topologie du PC}
     \begin{table}[h!]
@@ -126,37 +129,37 @@
 %«»
 
   \part{Introduction}
-    L'objectif de ce TP est d'étudier le placement des threads sur divers cœurs ainsi que leur impact sur les performances. Dans le cadre de ce TP, nous utiliserons le code C d'un fichier nommé «matrixmatrixmultiply.c», constitué de plusieurs multiplication de matrices, est un code massivement parallèle. Ce code est une implémentation d'une version parallèle d'OpenMP, son exécution créera plusieurs threads.
+    L'objectif de ce TP est d'étudier le placement des threads sur divers cœurs ainsi que leur impact sur les performances. Dans le cadre de ce TP, nous utiliserons le code C d'un fichier nommé «matrixmatrixmultiply.c», constitué de plusieurs multiplications de matrices. C'est un code massivement parallèle. Ce code est une implémentation d'une version parallèle d'OpenMP dont l'exécution créera plusieurs threads.
     \newline
-    Lors de ce TP, nous utiliserons la commande \textit{time} pour connaître le temps réal de notre programme ainsi que \textit{RStudio}, un IDE pour le langage R, permettant de visualiser graphiquement des datas que nous récolterons au fur-et-à-mesure du TP.
+    Lors de ce TP, nous utiliserons la commande \textit{time} pour connaître le temps réel de notre programme ainsi que \textit{RStudio}, un IDE pour le langage R, permettant de visualiser graphiquement des données que nous récolterons au fur-et-à-mesure du TP.
 
   %\pageblanche
   \clearpage
   %--------------------------------------Part II-----------------------------------------------------------
   \part{Mesures des performances}
     Dans cette partie nous réaliserons des benchmarks pour tester les performances du fichier C «matrixmatrixmultiply.c».
-    Nous allons pour cela, utiliser des scripts pour générer des données, avec la commande \textit{time}, à partir de notre fichier compiler avec gcc et icx avec du placement de thread. On aura trois types de données : 
+    Nous allons pour cela, utiliser des scripts pour générer des données, avec la commande \textit{time}, à partir de notre fichier compilé avec gcc et icx avec du placement de threads. On aura trois types de données : 
     \begin{itemize}
-        \item données générées avec des threads sans affinité (placé par l'OS)
-        \item données générées avec des threads compact (assignés à des cœurs proches pour favoriser le partage de cache)
-        \item données générées avec des threads scatter (placé sur des cœurs éloignés pour favoriser l'utilisation des caches individuels)
+        \item données générées avec des threads sans affinité (placés par l'OS)
+        \item données générées avec des threads \textit{compact} (assignés à des cœurs proches pour favoriser le partage de cache)
+        \item données générées avec des threads \textit{scatter} (placés sur des cœurs éloignés pour favoriser l'utilisation des caches individuels)
     \end{itemize}
     Ces expérimentations nous permettront de comparer l'impact des différentes stratégies de placement des threads sur les performances de notre programme.
     \section{Exécution des scripts}
-    Après la commande \textit{make}, qui nous permet de compiler notre programme avec les différents compilateur,
+    Après la commande \textit{make}, qui nous permet de compiler notre programme avec les différents compilateurs,
         on exécute les trois scripts du dossier \textit{bench/} pour obtenir, pour chaque compilateur, trois fichiers de données.
-        les fichiers générés sont les suivant : 
+        les fichiers générés sont les suivants : 
         \begin{itemize}
             \item gcc.data et icx.data pour les données de threads sans affinité
-            \item gcc\_compact.data et icx\_compact.data pour les données de threads compact
-            \item gcc\_scatter.data et icx\_scatter.data pour les données de threads scatter
+            \item gcc\_compact.data et icx\_compact.data pour les données de threads \textit{compact}
+            \item gcc\_scatter.data et icx\_scatter.data pour les données de threads \textit{scatter}
         \end{itemize}
-        Chaque fichier est composé de 50 temps réals qui nous servirons pour visualiser l'efficacité  de nos stratégies.
+        Chaque fichier est composé de 50 temps réels qui nous serviront à visualiser l'efficacité  de nos stratégies.
     
     \section{Résultats obtenus}
-        A l'aide de \textit{RStudio} et de son outil \textit{boxplot}, nous pouvons visualiser les données que nous avons généré plus haut.
+        A l'aide de \textit{RStudio} et de son outil \textit{boxplot}, nous pouvons visualiser les données que nous avons générées plus haut.
         \subsection{Threads sans affinité}
-        Le placement de threads sans affinité est fait par l'OS qui les place automatiquement. C'est lui qui décide quels cœurs physique ou logiques seront utilisés pour exécuter les threads.
+        Le placement de threads sans affinité est fait par l'OS qui les place automatiquement. C'est lui qui décide quels cœurs physiques ou logiques seront utilisés pour exécuter les threads.
             Voici les résultats obtenus pour les exécutions avec threads sans affinité : 
 
             \begin{figure}[H]
@@ -166,11 +169,11 @@
                 %\label{fig:sansaffinité}
             \end{figure}
                 
-            On remarque que pour des threads sans affinité, \textit{gcc} est plus performant que \textit{icx}. On remarque également qu'il y a un intervalle non régulier de données, allant de 0,32 à 0,42 pour \textit{gcc} et de 0,38 à 0,57 pour \textit{icx}.
-        \subsection{Threads compact}
+            On remarque que pour des threads sans affinité, \textit{gcc} est plus performant que \textit{icx}. On remarque également qu'il y a un intervalle non régulier de données, allant de 0,32s à 0,42s pour \textit{gcc} et de 0,38s à 0,57s pour \textit{icx}.
+        \subsection{Threads \textit{compact}}
         Ici le placement des threads se fait manuellement grâce au script.
         \newline
-            Voici les résultats obtenus pour les exécutions avec placement de threads rapproché :
+            Voici les résultats obtenus pour les exécutions avec placement de threads rapprochés :
 
             \begin{figure}[H]
                 \centering
@@ -179,8 +182,8 @@
                 %\label{fig:compact}
             \end{figure}
 
-            On remarque que pour des threads placés de manière rapproché, \textit{gcc} est une nouvelle fois plus performant que \textit{icx}. On a un intervalle de données restreint, allant de 0,37 à 0,41 pour \textit{gcc} et de 0,59 à 0,65 pour \textit{icx}.
-        \subsection{Threads scatter}
+            On remarque que pour des threads placés de manière rapprochée, \textit{gcc} est une nouvelle fois plus performant que \textit{icx}. On a un intervalle de données restreint, allant de 0,37s à 0,41s pour \textit{gcc} et de 0,59s à 0,65s pour \textit{icx}.
+        \subsection{Threads \textit{scatter}}
         Ici le placement des threads se fait manuellement grâce au script.
         \newline
         Voici les résultats obtenus pour les exécutions avec threads éloignés :
@@ -192,17 +195,17 @@
             %\label{fig:scatter}
         \end{figure}
 
-        On remarque que pour des threads placés de manière éloigné, \textit{gcc} est une nouvelle fois plus performant que \textit{icx}. On a un intervalle de données allant de 0, 35 à 0,40 pour \textit{gcc} et de 0,40 à 0,52 pour \textit{icx}.
+        On remarque que pour des threads placés de manière éloignée, \textit{gcc} est une nouvelle fois plus performant que \textit{icx}. On a un intervalle de données allant de 0, 35s à 0,40s pour \textit{gcc} et de 0,40s à 0,52s pour \textit{icx}.
     \clearpage
     \part{Conclusion}
     Durant ce TP, nous avons étudié l'importance des placements de threads pour améliorer les performances de notre programme. Nous avons, pour cela, exploré trois types de placements de threads : 
     \newline \indent
-        Le placement de threads dit sans affinité : Ici c'est l'OS qui place les threads automatiquement. Les résultats obtenus ont montré une grande diversité de temps de part le grand intervalle de valeurs générés. L'avantage de ce placement est que l'OS s'occupe de tout mais cette méthode peut être inefficace en termes d'utilisation du cache car les threads peuvent être déplacés d'un cœur à un autre au cours de l'exécution, ce qui explique le grand intervalle de données.
-        \newline \indent
-        Le placement de threads compact : On assigne volontairement des threads à des cœurs proches les uns des autres pour un partage du cache. Cette méthode permet un partage du cache plus efficace et donc d'améliorer la communication entre les threads, ce qui réduit le temps d'exécution. On le confirme avec les résultats obtenus, l'intervalle de données étant petit. Les inconvénients ici sont la saturation du cache et la sous-utilisation des autres cœurs.
-        \newline \indent
-        Le placement de threads scatter : On placement les threads sur des cœurs éloignés les uns des autres. Cela permet au thread d'avoir un accès dédié au cache, réduisant les interférences entre les threads. Utile pour les applications qui ne partagent pas les même données. Cela peut également augmenter la latence de communication entre les threads s'il y a des dépendances de données entre les eux.
-        \newline
+        Le placement de threads dit sans affinité : Ici c'est l'OS qui place les threads automatiquement. Les résultats obtenus ont montré une grande diversité de temps de part le grand intervalle de valeurs générées. L'avantage de ce placement est que l'OS s'occupe de tout mais cette méthode peut être inefficace en terme d'utilisation du cache car les threads peuvent être déplacés d'un cœur à un autre au cours de l'exécution, ce qui explique le grand intervalle de données.
+        \newline\newline\indent
+        Le placement de threads \textit{compact} : On assigne volontairement des threads à des cœurs proches les uns des autres pour un partage du cache. Cette méthode permet un partage du cache plus efficace et donc d'améliorer la communication entre les threads, ce qui réduit le temps d'exécution. On le confirme avec les résultats obtenus, l'intervalle de données étant petit. Les inconvénients ici sont la saturation du cache et la sous-utilisation des autres cœurs.
+        \newline\newline \indent
+        Le placement de threads \textit{scatter} : On place les threads sur des cœurs éloignés les uns des autres. Cela permet au thread d'avoir un accès dédié au cache, réduisant les interférences entre les threads. Ce placement est utile pour les applications qui ne partagent pas les même données. Cela peut également augmenter la latence de communication entre les threads s'il y a des dépendances de données entre eux.
+        \newline\newline
         \indent
-        En résumé, il est nécessaire d'étudier notre application en profondeur pour connaître les éventuelles dépendances de données pour placer nos threads en fonction des besoins.
+        En résumé, il est nécessaire d'étudier notre application en profondeur pour connaître les éventuelles dépendances de données afin de placer nos threads en fonction des besoins.
 \end{document}

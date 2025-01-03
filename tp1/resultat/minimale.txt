@@ -1,0 +1,204 @@
+--------Debut execution---------
+dynamique_gcc_O0
+
+real	0m24,562s
+user	0m24,126s
+sys	0m0,208s
+dynamique_gcc_O1
+
+real	0m12,919s
+user	0m12,656s
+sys	0m0,220s
+dynamique_gcc_O2
+
+real	0m8,612s
+user	0m8,118s
+sys	0m0,188s
+dynamique_gcc_O3
+
+real	0m8,520s
+user	0m8,039s
+sys	0m0,193s
+dynamique_gcc_Os
+
+real	0m11,442s
+user	0m10,951s
+sys	0m0,184s
+dynamique_icx_O1
+
+real	0m8,760s
+user	0m8,329s
+sys	0m0,208s
+dynamique_icx_O1
+
+real	0m8,524s
+user	0m8,060s
+sys	0m0,176s
+dynamique_icx_O2
+
+real	0m8,342s
+user	0m7,832s
+sys	0m0,204s
+dynamique_icx_O3
+
+real	0m7,881s
+user	0m7,706s
+sys	0m0,172s
+dynamique_icx_Os
+
+real	0m8,961s
+user	0m8,463s
+sys	0m0,208s
+statique_gcc_O0
+
+real	0m14,937s
+user	0m14,456s
+sys	0m0,184s
+statique_gcc_O1
+
+real	0m5,798s
+user	0m5,319s
+sys	0m0,188s
+statique_gcc_O2
+
+real	0m5,638s
+user	0m5,193s
+sys	0m0,156s
+statique_gcc_O3
+
+real	0m5,680s
+user	0m5,139s
+sys	0m0,240s
+statique_gcc_Os
+
+real	0m5,709s
+user	0m5,257s
+sys	0m0,150s
+statique_icx_O0
+
+real	0m12,409s
+user	0m11,901s
+sys	0m0,208s
+statique_icx_O1
+
+real	0m5,616s
+user	0m5,230s
+sys	0m0,168s
+statique_icx_O2
+
+real	0m3,222s
+user	0m2,759s
+sys	0m0,180s
+statique_icx_O3
+
+real	0m3,255s
+user	0m2,744s
+sys	0m0,204s
+statique_icx_Os
+
+real	0m5,709s
+user	0m5,267s
+sys	0m0,140s
+--------Fin execution---------
+--------Debut execution---------
+dynamique_gcc_O0
+
+real	0m24,672s
+user	0m24,466s
+sys	0m0,160s
+dynamique_gcc_O1
+
+real	0m13,475s
+user	0m13,002s
+sys	0m0,168s
+dynamique_gcc_O2
+
+real	0m8,365s
+user	0m7,895s
+sys	0m0,180s
+dynamique_gcc_O3
+
+real	0m8,742s
+user	0m8,425s
+sys	0m0,188s
+dynamique_gcc_Os
+
+real	0m11,586s
+user	0m11,067s
+sys	0m0,212s
+dynamique_icx_O1
+
+real	0m8,798s
+user	0m8,304s
+sys	0m0,204s
+dynamique_icx_O1
+
+real	0m8,709s
+user	0m8,308s
+sys	0m0,200s
+dynamique_icx_O2
+
+real	0m8,876s
+user	0m8,374s
+sys	0m0,200s
+dynamique_icx_O3
+
+real	0m8,476s
+user	0m7,979s
+sys	0m0,208s
+dynamique_icx_Os
+
+real	0m8,627s
+user	0m8,079s
+sys	0m0,210s
+statique_gcc_O0
+
+real	0m15,082s
+user	0m14,564s
+sys	0m0,180s
+statique_gcc_O1
+
+real	0m5,790s
+user	0m5,298s
+sys	0m0,202s
+statique_gcc_O2
+
+real	0m5,631s
+user	0m5,148s
+sys	0m0,186s
+statique_gcc_O3
+
+real	0m5,653s
+user	0m5,170s
+sys	0m0,184s
+statique_gcc_Os
+
+real	0m5,680s
+user	0m5,236s
+sys	0m0,186s
+statique_icx_O0
+
+real	0m12,438s
+user	0m11,939s
+sys	0m0,204s
+statique_icx_O1
+
+real	0m5,720s
+user	0m5,214s
+sys	0m0,216s
+statique_icx_O2
+
+real	0m3,230s
+user	0m2,763s
+sys	0m0,192s
+statique_icx_O3
+
+real	0m3,188s
+user	0m2,717s
+sys	0m0,168s
+statique_icx_Os
+
+real	0m5,663s
+user	0m5,242s
+sys	0m0,192s
+--------Fin execution---------
